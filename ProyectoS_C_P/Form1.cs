@@ -2,9 +2,14 @@ namespace ProyectoS_C_P
 {
     public partial class Form1 : Form
     {
+        private List<Proyecto> ProyectoList = new List<Proyecto>();
+        private List<Usuario> UsuarioList = new List<Usuario>();
+        private List<Tarea> TareaList = new List<Tarea>();
+
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,6 +34,18 @@ namespace ProyectoS_C_P
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Proyecto objetoproyecto = new();
+
+            objetoproyecto.Nombre = TextBoxNamePro.Text;
+            objetoproyecto.Descripcion = ListBoxProyect.Text;
+            objetoproyecto.Estado = CheckBoxFin.Checked;
+            objetoproyecto.HorasTrabajadas = (int)numericUpDown1.Value;
+            objetoproyecto.HorasTotales = (int)numericUpDown2.Value;
+            objetoproyecto.FechaCreacion = dateTime.Value;
+
+            ProyectoList.Add(objetoproyecto);
+
+            ActualizardataGridView2();
 
         }
 
@@ -83,6 +100,11 @@ namespace ProyectoS_C_P
         }
 
         private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListBoxProyect_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

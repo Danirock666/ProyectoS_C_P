@@ -31,38 +31,42 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            panel1 = new Panel();
+            TextBoxNamePro = new TextBox();
+            PanelGestionProyect = new Panel();
+            AgregarProButton = new Button();
+            ActualizarButton = new Button();
             dataGridView2 = new DataGridView();
-            listBox1 = new ListBox();
-            groupBox1 = new GroupBox();
-            checkBox3 = new CheckBox();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
+            ListBoxProyect = new ListBox();
+            GroupBoxEstado = new GroupBox();
+            CheckBoxFin = new CheckBox();
+            CheckBoxPend = new CheckBox();
+            CheckBoxProgre = new CheckBox();
             numericUpDown2 = new NumericUpDown();
             numericUpDown1 = new NumericUpDown();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            EliminarButton = new Button();
+            EditarButton = new Button();
+            GuardarButton = new Button();
             label4 = new Label();
             label5 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dateTime = new DateTimePicker();
             label3 = new Label();
             label7 = new Label();
             label8 = new Label();
-            textBox2 = new TextBox();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            groupBox3 = new GroupBox();
+            TextBoxUsu = new TextBox();
+            PanelUsuario = new Panel();
+            AgregarUsuButton = new Button();
+            PanelTareas = new Panel();
+            IngresarTareaButton = new Button();
+            GroupBoxArea = new GroupBox();
             checkBox7 = new CheckBox();
             checkBox8 = new CheckBox();
             numericUpDown3 = new NumericUpDown();
-            groupBox2 = new GroupBox();
+            GroupBoxEstado2 = new GroupBox();
             checkBox4 = new CheckBox();
             checkBox5 = new CheckBox();
             checkBox6 = new CheckBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
+            TextBoxProyect = new TextBox();
+            TextBoxEmpAsig = new TextBox();
             dataGridView1 = new DataGridView();
             dateTimePicker2 = new DateTimePicker();
             label15 = new Label();
@@ -70,17 +74,16 @@
             label12 = new Label();
             label10 = new Label();
             label9 = new Label();
-            button4 = new Button();
-            panel1.SuspendLayout();
+            PanelGestionProyect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            groupBox1.SuspendLayout();
+            GroupBoxEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            groupBox3.SuspendLayout();
+            PanelUsuario.SuspendLayout();
+            PanelTareas.SuspendLayout();
+            GroupBoxArea.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
-            groupBox2.SuspendLayout();
+            GroupBoxEstado2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -105,41 +108,65 @@
             label2.Text = "Nombre:";
             label2.Click += label2_Click;
             // 
-            // textBox1
+            // TextBoxNamePro
             // 
-            textBox1.BackColor = Color.Gray;
-            textBox1.ForeColor = SystemColors.Window;
-            textBox1.Location = new Point(91, 40);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(181, 27);
-            textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
+            TextBoxNamePro.BackColor = Color.Gray;
+            TextBoxNamePro.ForeColor = SystemColors.Window;
+            TextBoxNamePro.Location = new Point(91, 40);
+            TextBoxNamePro.Name = "TextBoxNamePro";
+            TextBoxNamePro.Size = new Size(181, 27);
+            TextBoxNamePro.TabIndex = 2;
+            TextBoxNamePro.TextChanged += textBox1_TextChanged;
             // 
-            // panel1
+            // PanelGestionProyect
             // 
-            panel1.BackColor = Color.FromArgb(64, 64, 64);
-            panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(dataGridView2);
-            panel1.Controls.Add(listBox1);
-            panel1.Controls.Add(groupBox1);
-            panel1.Controls.Add(numericUpDown2);
-            panel1.Controls.Add(numericUpDown1);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(dateTimePicker1);
-            panel1.Controls.Add(label3);
-            panel1.Location = new Point(37, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(845, 515);
-            panel1.TabIndex = 3;
-            panel1.Paint += panel1_Paint;
+            PanelGestionProyect.BackColor = Color.FromArgb(64, 64, 64);
+            PanelGestionProyect.BorderStyle = BorderStyle.Fixed3D;
+            PanelGestionProyect.Controls.Add(AgregarProButton);
+            PanelGestionProyect.Controls.Add(ActualizarButton);
+            PanelGestionProyect.Controls.Add(dataGridView2);
+            PanelGestionProyect.Controls.Add(ListBoxProyect);
+            PanelGestionProyect.Controls.Add(GroupBoxEstado);
+            PanelGestionProyect.Controls.Add(numericUpDown2);
+            PanelGestionProyect.Controls.Add(numericUpDown1);
+            PanelGestionProyect.Controls.Add(label1);
+            PanelGestionProyect.Controls.Add(EliminarButton);
+            PanelGestionProyect.Controls.Add(EditarButton);
+            PanelGestionProyect.Controls.Add(TextBoxNamePro);
+            PanelGestionProyect.Controls.Add(GuardarButton);
+            PanelGestionProyect.Controls.Add(label2);
+            PanelGestionProyect.Controls.Add(label4);
+            PanelGestionProyect.Controls.Add(label5);
+            PanelGestionProyect.Controls.Add(dateTime);
+            PanelGestionProyect.Controls.Add(label3);
+            PanelGestionProyect.Location = new Point(37, 12);
+            PanelGestionProyect.Name = "PanelGestionProyect";
+            PanelGestionProyect.Size = new Size(845, 515);
+            PanelGestionProyect.TabIndex = 3;
+            PanelGestionProyect.Paint += panel1_Paint;
+            // 
+            // AgregarProButton
+            // 
+            AgregarProButton.BackColor = Color.FromArgb(64, 64, 64);
+            AgregarProButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            AgregarProButton.Location = new Point(289, 38);
+            AgregarProButton.Name = "AgregarProButton";
+            AgregarProButton.Size = new Size(94, 29);
+            AgregarProButton.TabIndex = 18;
+            AgregarProButton.Text = "Agregar ";
+            AgregarProButton.UseVisualStyleBackColor = false;
+            // 
+            // ActualizarButton
+            // 
+            ActualizarButton.BackColor = Color.FromArgb(64, 64, 64);
+            ActualizarButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            ActualizarButton.ForeColor = Color.White;
+            ActualizarButton.Location = new Point(731, 244);
+            ActualizarButton.Name = "ActualizarButton";
+            ActualizarButton.Size = new Size(94, 29);
+            ActualizarButton.TabIndex = 17;
+            ActualizarButton.Text = "Actualizar";
+            ActualizarButton.UseVisualStyleBackColor = false;
             // 
             // dataGridView2
             // 
@@ -152,64 +179,65 @@
             dataGridView2.Size = new Size(807, 130);
             dataGridView2.TabIndex = 16;
             // 
-            // listBox1
+            // ListBoxProyect
             // 
-            listBox1.BackColor = Color.DimGray;
-            listBox1.ForeColor = SystemColors.Window;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(18, 75);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(807, 124);
-            listBox1.TabIndex = 15;
+            ListBoxProyect.BackColor = Color.DimGray;
+            ListBoxProyect.ForeColor = SystemColors.Window;
+            ListBoxProyect.FormattingEnabled = true;
+            ListBoxProyect.ItemHeight = 20;
+            ListBoxProyect.Location = new Point(18, 75);
+            ListBoxProyect.Name = "ListBoxProyect";
+            ListBoxProyect.Size = new Size(807, 124);
+            ListBoxProyect.TabIndex = 15;
+            ListBoxProyect.SelectedIndexChanged += ListBoxProyect_SelectedIndexChanged;
             // 
-            // groupBox1
+            // GroupBoxEstado
             // 
-            groupBox1.Controls.Add(checkBox3);
-            groupBox1.Controls.Add(checkBox1);
-            groupBox1.Controls.Add(checkBox2);
-            groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.ForeColor = SystemColors.ButtonFace;
-            groupBox1.Location = new Point(441, 213);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(250, 125);
-            groupBox1.TabIndex = 14;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Estado";
+            GroupBoxEstado.Controls.Add(CheckBoxFin);
+            GroupBoxEstado.Controls.Add(CheckBoxPend);
+            GroupBoxEstado.Controls.Add(CheckBoxProgre);
+            GroupBoxEstado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            GroupBoxEstado.ForeColor = SystemColors.ButtonFace;
+            GroupBoxEstado.Location = new Point(441, 213);
+            GroupBoxEstado.Name = "GroupBoxEstado";
+            GroupBoxEstado.Size = new Size(250, 125);
+            GroupBoxEstado.TabIndex = 14;
+            GroupBoxEstado.TabStop = false;
+            GroupBoxEstado.Text = "Estado";
             // 
-            // checkBox3
+            // CheckBoxFin
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox3.Location = new Point(8, 31);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(101, 24);
-            checkBox3.TabIndex = 11;
-            checkBox3.Text = "Finalizado";
-            checkBox3.UseVisualStyleBackColor = true;
-            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
+            CheckBoxFin.AutoSize = true;
+            CheckBoxFin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            CheckBoxFin.Location = new Point(8, 31);
+            CheckBoxFin.Name = "CheckBoxFin";
+            CheckBoxFin.Size = new Size(101, 24);
+            CheckBoxFin.TabIndex = 11;
+            CheckBoxFin.Text = "Finalizado";
+            CheckBoxFin.UseVisualStyleBackColor = true;
+            CheckBoxFin.CheckedChanged += checkBox3_CheckedChanged;
             // 
-            // checkBox1
+            // CheckBoxPend
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox1.Location = new Point(8, 61);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(101, 24);
-            checkBox1.TabIndex = 9;
-            checkBox1.Text = "Pendiente";
-            checkBox1.UseVisualStyleBackColor = true;
+            CheckBoxPend.AutoSize = true;
+            CheckBoxPend.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            CheckBoxPend.Location = new Point(8, 61);
+            CheckBoxPend.Name = "CheckBoxPend";
+            CheckBoxPend.Size = new Size(101, 24);
+            CheckBoxPend.TabIndex = 9;
+            CheckBoxPend.Text = "Pendiente";
+            CheckBoxPend.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // CheckBoxProgre
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox2.Location = new Point(8, 91);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(115, 24);
-            checkBox2.TabIndex = 10;
-            checkBox2.Text = "En Progreso";
-            checkBox2.UseVisualStyleBackColor = true;
+            CheckBoxProgre.AutoSize = true;
+            CheckBoxProgre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            CheckBoxProgre.Location = new Point(8, 91);
+            CheckBoxProgre.Name = "CheckBoxProgre";
+            CheckBoxProgre.Size = new Size(115, 24);
+            CheckBoxProgre.TabIndex = 10;
+            CheckBoxProgre.Text = "En Progreso";
+            CheckBoxProgre.UseVisualStyleBackColor = true;
             // 
             // numericUpDown2
             // 
@@ -229,40 +257,40 @@
             numericUpDown1.Size = new Size(54, 27);
             numericUpDown1.TabIndex = 12;
             // 
-            // button3
+            // EliminarButton
             // 
-            button3.BackColor = Color.FromArgb(64, 64, 64);
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(731, 281);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 3;
-            button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = false;
+            EliminarButton.BackColor = Color.FromArgb(64, 64, 64);
+            EliminarButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            EliminarButton.ForeColor = Color.White;
+            EliminarButton.Location = new Point(731, 281);
+            EliminarButton.Name = "EliminarButton";
+            EliminarButton.Size = new Size(94, 29);
+            EliminarButton.TabIndex = 3;
+            EliminarButton.Text = "Eliminar";
+            EliminarButton.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // EditarButton
             // 
-            button2.BackColor = Color.FromArgb(64, 64, 64);
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(731, 316);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 2;
-            button2.Text = "Editar";
-            button2.UseVisualStyleBackColor = false;
+            EditarButton.BackColor = Color.FromArgb(64, 64, 64);
+            EditarButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            EditarButton.Location = new Point(731, 316);
+            EditarButton.Name = "EditarButton";
+            EditarButton.Size = new Size(94, 29);
+            EditarButton.TabIndex = 2;
+            EditarButton.Text = "Editar";
+            EditarButton.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // GuardarButton
             // 
-            button1.BackColor = Color.FromArgb(64, 64, 64);
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(731, 209);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 1;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            GuardarButton.BackColor = Color.FromArgb(64, 64, 64);
+            GuardarButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            GuardarButton.Location = new Point(731, 209);
+            GuardarButton.Name = "GuardarButton";
+            GuardarButton.Size = new Size(94, 29);
+            GuardarButton.TabIndex = 1;
+            GuardarButton.Text = "Guardar";
+            GuardarButton.UseVisualStyleBackColor = false;
+            GuardarButton.Click += button1_Click;
             // 
             // label4
             // 
@@ -285,13 +313,13 @@
             label5.TabIndex = 7;
             label5.Text = "Horas Totales:";
             // 
-            // dateTimePicker1
+            // dateTime
             // 
-            dateTimePicker1.CalendarMonthBackground = Color.Gray;
-            dateTimePicker1.Location = new Point(141, 311);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(274, 27);
-            dateTimePicker1.TabIndex = 5;
+            dateTime.CalendarMonthBackground = Color.Gray;
+            dateTime.Location = new Point(141, 311);
+            dateTime.Name = "dateTime";
+            dateTime.Size = new Size(274, 27);
+            dateTime.TabIndex = 5;
             // 
             // label3
             // 
@@ -324,62 +352,86 @@
             label8.TabIndex = 13;
             label8.Text = "Nombre:";
             // 
-            // textBox2
+            // TextBoxUsu
             // 
-            textBox2.BackColor = Color.Gray;
-            textBox2.ForeColor = SystemColors.Window;
-            textBox2.Location = new Point(108, 43);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(202, 27);
-            textBox2.TabIndex = 14;
+            TextBoxUsu.BackColor = Color.Gray;
+            TextBoxUsu.ForeColor = SystemColors.Window;
+            TextBoxUsu.Location = new Point(108, 43);
+            TextBoxUsu.Name = "TextBoxUsu";
+            TextBoxUsu.Size = new Size(202, 27);
+            TextBoxUsu.TabIndex = 14;
             // 
-            // panel2
+            // PanelUsuario
             // 
-            panel2.BackColor = Color.FromArgb(64, 64, 64);
-            panel2.BorderStyle = BorderStyle.Fixed3D;
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(label8);
-            panel2.Location = new Point(37, 553);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(845, 104);
-            panel2.TabIndex = 15;
+            PanelUsuario.BackColor = Color.FromArgb(64, 64, 64);
+            PanelUsuario.BorderStyle = BorderStyle.Fixed3D;
+            PanelUsuario.Controls.Add(AgregarUsuButton);
+            PanelUsuario.Controls.Add(label7);
+            PanelUsuario.Controls.Add(TextBoxUsu);
+            PanelUsuario.Controls.Add(label8);
+            PanelUsuario.Location = new Point(37, 553);
+            PanelUsuario.Name = "PanelUsuario";
+            PanelUsuario.Size = new Size(845, 104);
+            PanelUsuario.TabIndex = 15;
             // 
-            // panel3
+            // AgregarUsuButton
             // 
-            panel3.BackColor = Color.FromArgb(64, 64, 64);
-            panel3.BorderStyle = BorderStyle.Fixed3D;
-            panel3.Controls.Add(groupBox3);
-            panel3.Controls.Add(numericUpDown3);
-            panel3.Controls.Add(groupBox2);
-            panel3.Controls.Add(textBox4);
-            panel3.Controls.Add(textBox3);
-            panel3.Controls.Add(dataGridView1);
-            panel3.Controls.Add(dateTimePicker2);
-            panel3.Controls.Add(label15);
-            panel3.Controls.Add(label14);
-            panel3.Controls.Add(label12);
-            panel3.Controls.Add(label10);
-            panel3.Controls.Add(label9);
-            panel3.Location = new Point(37, 681);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(845, 358);
-            panel3.TabIndex = 16;
+            AgregarUsuButton.BackColor = Color.FromArgb(64, 64, 64);
+            AgregarUsuButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            AgregarUsuButton.Location = new Point(321, 41);
+            AgregarUsuButton.Name = "AgregarUsuButton";
+            AgregarUsuButton.Size = new Size(94, 29);
+            AgregarUsuButton.TabIndex = 15;
+            AgregarUsuButton.Text = "Agregar Usuario";
+            AgregarUsuButton.UseVisualStyleBackColor = false;
             // 
-            // groupBox3
+            // PanelTareas
             // 
-            groupBox3.BackColor = Color.FromArgb(64, 64, 64);
-            groupBox3.Controls.Add(checkBox7);
-            groupBox3.Controls.Add(checkBox8);
-            groupBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox3.ForeColor = SystemColors.ButtonFace;
-            groupBox3.Location = new Point(209, 82);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(115, 93);
-            groupBox3.TabIndex = 16;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Area";
-            groupBox3.Enter += groupBox3_Enter;
+            PanelTareas.BackColor = Color.FromArgb(64, 64, 64);
+            PanelTareas.BorderStyle = BorderStyle.Fixed3D;
+            PanelTareas.Controls.Add(IngresarTareaButton);
+            PanelTareas.Controls.Add(GroupBoxArea);
+            PanelTareas.Controls.Add(numericUpDown3);
+            PanelTareas.Controls.Add(GroupBoxEstado2);
+            PanelTareas.Controls.Add(TextBoxProyect);
+            PanelTareas.Controls.Add(TextBoxEmpAsig);
+            PanelTareas.Controls.Add(dataGridView1);
+            PanelTareas.Controls.Add(dateTimePicker2);
+            PanelTareas.Controls.Add(label15);
+            PanelTareas.Controls.Add(label14);
+            PanelTareas.Controls.Add(label12);
+            PanelTareas.Controls.Add(label10);
+            PanelTareas.Controls.Add(label9);
+            PanelTareas.Location = new Point(37, 681);
+            PanelTareas.Name = "PanelTareas";
+            PanelTareas.Size = new Size(845, 358);
+            PanelTareas.TabIndex = 16;
+            // 
+            // IngresarTareaButton
+            // 
+            IngresarTareaButton.BackColor = Color.FromArgb(64, 64, 64);
+            IngresarTareaButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            IngresarTareaButton.Location = new Point(626, 163);
+            IngresarTareaButton.Name = "IngresarTareaButton";
+            IngresarTareaButton.Size = new Size(94, 29);
+            IngresarTareaButton.TabIndex = 17;
+            IngresarTareaButton.Text = "Ingresar";
+            IngresarTareaButton.UseVisualStyleBackColor = false;
+            // 
+            // GroupBoxArea
+            // 
+            GroupBoxArea.BackColor = Color.FromArgb(64, 64, 64);
+            GroupBoxArea.Controls.Add(checkBox7);
+            GroupBoxArea.Controls.Add(checkBox8);
+            GroupBoxArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            GroupBoxArea.ForeColor = SystemColors.ButtonFace;
+            GroupBoxArea.Location = new Point(209, 82);
+            GroupBoxArea.Name = "GroupBoxArea";
+            GroupBoxArea.Size = new Size(115, 93);
+            GroupBoxArea.TabIndex = 16;
+            GroupBoxArea.TabStop = false;
+            GroupBoxArea.Text = "Area";
+            GroupBoxArea.Enter += groupBox3_Enter;
             // 
             // checkBox7
             // 
@@ -413,25 +465,25 @@
             numericUpDown3.Size = new Size(58, 27);
             numericUpDown3.TabIndex = 16;
             // 
-            // groupBox2
+            // GroupBoxEstado2
             // 
-            groupBox2.Controls.Add(checkBox4);
-            groupBox2.Controls.Add(checkBox5);
-            groupBox2.Controls.Add(checkBox6);
-            groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox2.ForeColor = SystemColors.ButtonFace;
-            groupBox2.Location = new Point(12, 82);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(163, 114);
-            groupBox2.TabIndex = 15;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Estado";
+            GroupBoxEstado2.Controls.Add(checkBox4);
+            GroupBoxEstado2.Controls.Add(checkBox5);
+            GroupBoxEstado2.Controls.Add(checkBox6);
+            GroupBoxEstado2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            GroupBoxEstado2.ForeColor = SystemColors.ButtonFace;
+            GroupBoxEstado2.Location = new Point(12, 82);
+            GroupBoxEstado2.Name = "GroupBoxEstado2";
+            GroupBoxEstado2.Size = new Size(163, 114);
+            GroupBoxEstado2.TabIndex = 15;
+            GroupBoxEstado2.TabStop = false;
+            GroupBoxEstado2.Text = "Estado";
             // 
             // checkBox4
             // 
             checkBox4.AutoSize = true;
             checkBox4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox4.Location = new Point(6, 26);
+            checkBox4.Location = new Point(6, 56);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(101, 24);
             checkBox4.TabIndex = 8;
@@ -443,7 +495,7 @@
             // 
             checkBox5.AutoSize = true;
             checkBox5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox5.Location = new Point(6, 56);
+            checkBox5.Location = new Point(6, 26);
             checkBox5.Name = "checkBox5";
             checkBox5.Size = new Size(101, 24);
             checkBox5.TabIndex = 9;
@@ -462,23 +514,23 @@
             checkBox6.UseVisualStyleBackColor = true;
             checkBox6.CheckedChanged += checkBox6_CheckedChanged;
             // 
-            // textBox4
+            // TextBoxProyect
             // 
-            textBox4.BackColor = Color.Gray;
-            textBox4.ForeColor = SystemColors.Window;
-            textBox4.Location = new Point(626, 75);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(135, 27);
-            textBox4.TabIndex = 15;
+            TextBoxProyect.BackColor = Color.Gray;
+            TextBoxProyect.ForeColor = SystemColors.Window;
+            TextBoxProyect.Location = new Point(626, 75);
+            TextBoxProyect.Name = "TextBoxProyect";
+            TextBoxProyect.Size = new Size(135, 27);
+            TextBoxProyect.TabIndex = 15;
             // 
-            // textBox3
+            // TextBoxEmpAsig
             // 
-            textBox3.BackColor = Color.Gray;
-            textBox3.ForeColor = SystemColors.Window;
-            textBox3.Location = new Point(626, 42);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(135, 27);
-            textBox3.TabIndex = 14;
+            TextBoxEmpAsig.BackColor = Color.Gray;
+            TextBoxEmpAsig.ForeColor = SystemColors.Window;
+            TextBoxEmpAsig.Location = new Point(626, 42);
+            TextBoxEmpAsig.Name = "TextBoxEmpAsig";
+            TextBoxEmpAsig.Size = new Size(135, 27);
+            TextBoxEmpAsig.TabIndex = 14;
             // 
             // dataGridView1
             // 
@@ -552,49 +604,37 @@
             label9.Text = "Gestion de Tareas";
             label9.Click += label9_Click;
             // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(64, 64, 64);
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(731, 244);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 29);
-            button4.TabIndex = 17;
-            button4.Text = "Actualizar";
-            button4.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
+            BackColor = Color.FromArgb(0, 0, 64);
             ClientSize = new Size(921, 1051);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(PanelTareas);
+            Controls.Add(PanelUsuario);
+            Controls.Add(PanelGestionProyect);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            PanelGestionProyect.ResumeLayout(false);
+            PanelGestionProyect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            GroupBoxEstado.ResumeLayout(false);
+            GroupBoxEstado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            PanelUsuario.ResumeLayout(false);
+            PanelUsuario.PerformLayout();
+            PanelTareas.ResumeLayout(false);
+            PanelTareas.PerformLayout();
+            GroupBoxArea.ResumeLayout(false);
+            GroupBoxArea.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            GroupBoxEstado2.ResumeLayout(false);
+            GroupBoxEstado2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -603,23 +643,23 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private Panel panel1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private TextBox TextBoxNamePro;
+        private Panel PanelGestionProyect;
+        private Button EliminarButton;
+        private Button EditarButton;
+        private Button GuardarButton;
         private Label label3;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTime;
         private Label label4;
         private Label label5;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
+        private CheckBox CheckBoxPend;
+        private CheckBox CheckBoxProgre;
+        private CheckBox CheckBoxFin;
         private Label label7;
         private Label label8;
-        private TextBox textBox2;
-        private Panel panel2;
-        private Panel panel3;
+        private TextBox TextBoxUsu;
+        private Panel PanelUsuario;
+        private Panel PanelTareas;
         private Label label9;
         private Label label12;
         private Label label10;
@@ -632,16 +672,19 @@
         private CheckBox checkBox5;
         private CheckBox checkBox4;
         private DataGridView dataGridView1;
-        private TextBox textBox3;
+        private TextBox TextBoxEmpAsig;
         private NumericUpDown numericUpDown2;
         private NumericUpDown numericUpDown1;
         private NumericUpDown numericUpDown3;
-        private TextBox textBox4;
-        private GroupBox groupBox1;
-        private GroupBox groupBox3;
-        private GroupBox groupBox2;
-        private ListBox listBox1;
+        private TextBox TextBoxProyect;
+        private GroupBox GroupBoxEstado;
+        private GroupBox GroupBoxArea;
+        private GroupBox GroupBoxEstado2;
+        private ListBox ListBoxProyect;
         private DataGridView dataGridView2;
-        private Button button4;
+        private Button ActualizarButton;
+        private Button AgregarProButton;
+        private Button AgregarUsuButton;
+        private Button IngresarTareaButton;
     }
 }
