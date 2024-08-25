@@ -15,7 +15,7 @@ namespace ProyectoS_C_P
         public Form1()
         {
             InitializeComponent();
-            InicializardataGridView2();
+            dataGridView2 = new DataGridView();
 
         }
 
@@ -41,18 +41,7 @@ namespace ProyectoS_C_P
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Proyecto objetoproyecto = new();
-
-            objetoproyecto.Nombre = TextBoxNamePro.Text;
-            objetoproyecto.Descripcion = TextBoxDescription.Text;
-            objetoproyecto.Estado = CheckBoxFin.Checked;
-            objetoproyecto.HorasTrabajadas = (int)numericUpDown1.Value;
-            objetoproyecto.HorasTotales = (int)numericUpDown2.Value;
-            objetoproyecto.FechaCreacion = dateTime.Value;
-
-            ProyectoList.Add(objetoproyecto);
-
-            ActualizardataGridView2();
+           
 
         }
 
