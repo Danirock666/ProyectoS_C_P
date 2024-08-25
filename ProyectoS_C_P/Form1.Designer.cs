@@ -33,10 +33,11 @@
             label2 = new Label();
             TextBoxNamePro = new TextBox();
             PanelGestionProyect = new Panel();
+            TextBoxDescription = new TextBox();
+            label6 = new Label();
             AgregarProButton = new Button();
             ActualizarButton = new Button();
             dataGridView2 = new DataGridView();
-            ListBoxProyect = new ListBox();
             GroupBoxEstado = new GroupBox();
             CheckBoxFin = new CheckBox();
             CheckBoxPend = new CheckBox();
@@ -101,7 +102,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(14, 43);
+            label2.Location = new Point(37, 47);
             label2.Name = "label2";
             label2.Size = new Size(71, 20);
             label2.TabIndex = 1;
@@ -112,7 +113,7 @@
             // 
             TextBoxNamePro.BackColor = Color.Gray;
             TextBoxNamePro.ForeColor = SystemColors.Window;
-            TextBoxNamePro.Location = new Point(91, 40);
+            TextBoxNamePro.Location = new Point(120, 43);
             TextBoxNamePro.Name = "TextBoxNamePro";
             TextBoxNamePro.Size = new Size(181, 27);
             TextBoxNamePro.TabIndex = 2;
@@ -122,10 +123,11 @@
             // 
             PanelGestionProyect.BackColor = Color.FromArgb(64, 64, 64);
             PanelGestionProyect.BorderStyle = BorderStyle.Fixed3D;
+            PanelGestionProyect.Controls.Add(TextBoxDescription);
+            PanelGestionProyect.Controls.Add(label6);
             PanelGestionProyect.Controls.Add(AgregarProButton);
             PanelGestionProyect.Controls.Add(ActualizarButton);
             PanelGestionProyect.Controls.Add(dataGridView2);
-            PanelGestionProyect.Controls.Add(ListBoxProyect);
             PanelGestionProyect.Controls.Add(GroupBoxEstado);
             PanelGestionProyect.Controls.Add(numericUpDown2);
             PanelGestionProyect.Controls.Add(numericUpDown1);
@@ -145,11 +147,30 @@
             PanelGestionProyect.TabIndex = 3;
             PanelGestionProyect.Paint += panel1_Paint;
             // 
+            // TextBoxDescription
+            // 
+            TextBoxDescription.BackColor = Color.Gray;
+            TextBoxDescription.Location = new Point(120, 101);
+            TextBoxDescription.Name = "TextBoxDescription";
+            TextBoxDescription.Size = new Size(263, 27);
+            TextBoxDescription.TabIndex = 20;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(20, 108);
+            label6.Name = "label6";
+            label6.Size = new Size(94, 20);
+            label6.TabIndex = 19;
+            label6.Text = "Descripcion:";
+            label6.Click += label6_Click;
+            // 
             // AgregarProButton
             // 
             AgregarProButton.BackColor = Color.FromArgb(64, 64, 64);
             AgregarProButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            AgregarProButton.Location = new Point(289, 38);
+            AgregarProButton.Location = new Point(409, 101);
             AgregarProButton.Name = "AgregarProButton";
             AgregarProButton.Size = new Size(94, 29);
             AgregarProButton.TabIndex = 18;
@@ -178,18 +199,7 @@
             dataGridView2.RowTemplate.Height = 29;
             dataGridView2.Size = new Size(807, 130);
             dataGridView2.TabIndex = 16;
-            // 
-            // ListBoxProyect
-            // 
-            ListBoxProyect.BackColor = Color.DimGray;
-            ListBoxProyect.ForeColor = SystemColors.Window;
-            ListBoxProyect.FormattingEnabled = true;
-            ListBoxProyect.ItemHeight = 20;
-            ListBoxProyect.Location = new Point(18, 75);
-            ListBoxProyect.Name = "ListBoxProyect";
-            ListBoxProyect.Size = new Size(807, 124);
-            ListBoxProyect.TabIndex = 15;
-            ListBoxProyect.SelectedIndexChanged += ListBoxProyect_SelectedIndexChanged;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // GroupBoxEstado
             // 
@@ -609,7 +619,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
-            ClientSize = new Size(921, 1051);
+            ClientSize = new Size(919, 1051);
             Controls.Add(PanelTareas);
             Controls.Add(PanelUsuario);
             Controls.Add(PanelGestionProyect);
@@ -617,7 +627,7 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
-            Text = "Form1";
+            Text = "Gestor Proyect";
             Load += Form1_Load;
             PanelGestionProyect.ResumeLayout(false);
             PanelGestionProyect.PerformLayout();
@@ -680,11 +690,12 @@
         private GroupBox GroupBoxEstado;
         private GroupBox GroupBoxArea;
         private GroupBox GroupBoxEstado2;
-        private ListBox ListBoxProyect;
         private DataGridView dataGridView2;
         private Button ActualizarButton;
         private Button AgregarProButton;
         private Button AgregarUsuButton;
         private Button IngresarTareaButton;
+        private Label label6;
+        private TextBox TextBoxDescription;
     }
 }
