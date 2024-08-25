@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
             label2 = new Label();
             TextBoxNamePro = new TextBox();
@@ -37,19 +36,11 @@
             label6 = new Label();
             AgregarProButton = new Button();
             ActualizarButton = new Button();
-            dataGridView2 = new DataGridView();
-            GroupBoxEstado = new GroupBox();
-            CheckBoxFin = new CheckBox();
-            CheckBoxPend = new CheckBox();
-            CheckBoxProgre = new CheckBox();
-            numericUpDown2 = new NumericUpDown();
-            numericUpDown1 = new NumericUpDown();
-            EliminarButton = new Button();
-            EditarButton = new Button();
+            dataGridView = new DataGridView();
+            NumericUpDownHorasTotales = new NumericUpDown();
             GuardarButton = new Button();
-            label4 = new Label();
             label5 = new Label();
-            dateTime = new DateTimePicker();
+            DateTime = new DateTimePicker();
             label3 = new Label();
             label7 = new Label();
             label8 = new Label();
@@ -68,7 +59,7 @@
             checkBox6 = new CheckBox();
             TextBoxProyect = new TextBox();
             TextBoxEmpAsig = new TextBox();
-            dataGridView1 = new DataGridView();
+            dataGridView2 = new DataGridView();
             dateTimePicker2 = new DateTimePicker();
             label15 = new Label();
             label14 = new Label();
@@ -76,16 +67,14 @@
             label10 = new Label();
             label9 = new Label();
             PanelGestionProyect.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            GroupBoxEstado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NumericUpDownHorasTotales).BeginInit();
             PanelUsuario.SuspendLayout();
             PanelTareas.SuspendLayout();
             GroupBoxArea.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             GroupBoxEstado2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -102,7 +91,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(37, 47);
+            label2.Location = new Point(43, 46);
             label2.Name = "label2";
             label2.Size = new Size(71, 20);
             label2.TabIndex = 1;
@@ -127,9 +116,8 @@
             PanelGestionProyect.Controls.Add(label6);
             PanelGestionProyect.Controls.Add(AgregarProButton);
             PanelGestionProyect.Controls.Add(ActualizarButton);
-            PanelGestionProyect.Controls.Add(dataGridView2);
-            PanelGestionProyect.Controls.Add(GroupBoxEstado);
-            PanelGestionProyect.Controls.Add(numericUpDown2);
+            PanelGestionProyect.Controls.Add(dataGridView);
+            PanelGestionProyect.Controls.Add(NumericUpDownHorasTotales);
             PanelGestionProyect.Controls.Add(numericUpDown1);
             PanelGestionProyect.Controls.Add(label1);
             PanelGestionProyect.Controls.Add(EliminarButton);
@@ -304,7 +292,6 @@
             // 
             // label4
             // 
-            label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(18, 227);
             label4.Name = "label4";
@@ -317,25 +304,25 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(18, 264);
+            label5.Location = new Point(430, 43);
             label5.Name = "label5";
             label5.Size = new Size(108, 20);
             label5.TabIndex = 7;
             label5.Text = "Horas Totales:";
             // 
-            // dateTime
+            // DateTime
             // 
-            dateTime.CalendarMonthBackground = Color.Gray;
-            dateTime.Location = new Point(141, 311);
-            dateTime.Name = "dateTime";
-            dateTime.Size = new Size(274, 27);
-            dateTime.TabIndex = 5;
+            DateTime.CalendarMonthBackground = Color.Gray;
+            DateTime.Location = new Point(544, 103);
+            DateTime.Name = "DateTime";
+            DateTime.Size = new Size(274, 27);
+            DateTime.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(18, 316);
+            label3.Location = new Point(421, 108);
             label3.Name = "label3";
             label3.Size = new Size(117, 20);
             label3.TabIndex = 4;
@@ -379,9 +366,9 @@
             PanelUsuario.Controls.Add(label7);
             PanelUsuario.Controls.Add(TextBoxUsu);
             PanelUsuario.Controls.Add(label8);
-            PanelUsuario.Location = new Point(37, 553);
+            PanelUsuario.Location = new Point(37, 514);
             PanelUsuario.Name = "PanelUsuario";
-            PanelUsuario.Size = new Size(845, 104);
+            PanelUsuario.Size = new Size(845, 143);
             PanelUsuario.TabIndex = 15;
             // 
             // AgregarUsuButton
@@ -625,17 +612,13 @@
             Controls.Add(PanelGestionProyect);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.Fixed3D;
-            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Gestor Proyect";
             Load += Form1_Load;
             PanelGestionProyect.ResumeLayout(false);
             PanelGestionProyect.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            GroupBoxEstado.ResumeLayout(false);
-            GroupBoxEstado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NumericUpDownHorasTotales).EndInit();
             PanelUsuario.ResumeLayout(false);
             PanelUsuario.PerformLayout();
             PanelTareas.ResumeLayout(false);
@@ -655,16 +638,10 @@
         private Label label2;
         private TextBox TextBoxNamePro;
         private Panel PanelGestionProyect;
-        private Button EliminarButton;
-        private Button EditarButton;
         private Button GuardarButton;
         private Label label3;
-        private DateTimePicker dateTime;
-        private Label label4;
+        private DateTimePicker DateTime;
         private Label label5;
-        private CheckBox CheckBoxPend;
-        private CheckBox CheckBoxProgre;
-        private CheckBox CheckBoxFin;
         private Label label7;
         private Label label8;
         private TextBox TextBoxUsu;
@@ -681,16 +658,14 @@
         private CheckBox checkBox6;
         private CheckBox checkBox5;
         private CheckBox checkBox4;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
         private TextBox TextBoxEmpAsig;
-        private NumericUpDown numericUpDown2;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown NumericUpDownHorasTotales;
         private NumericUpDown numericUpDown3;
         private TextBox TextBoxProyect;
-        private GroupBox GroupBoxEstado;
         private GroupBox GroupBoxArea;
         private GroupBox GroupBoxEstado2;
-        private DataGridView dataGridView2;
+        private DataGridView dataGridView;
         private Button ActualizarButton;
         private Button AgregarProButton;
         private Button AgregarUsuButton;

@@ -100,7 +100,6 @@ namespace ProyectoS_C_P
 
         }
 
-        private void ListBoxProyect_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
