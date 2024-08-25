@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
+            LabelGestionDeProyectos = new Label();
+            LabelNombre = new Label();
             TextBoxNamePro = new TextBox();
             PanelGestionProyect = new Panel();
+            LabelEstado = new Label();
+            ComboBoxStatus = new ComboBox();
             TextBoxDescription = new TextBox();
-            label6 = new Label();
+            LabelDescripction = new Label();
             AgregarProButton = new Button();
             ActualizarButton = new Button();
-            dataGridView = new DataGridView();
+            dataGridViewProyecto = new DataGridView();
             NumericUpDownHorasTotales = new NumericUpDown();
             GuardarButton = new Button();
-            label5 = new Label();
+            LabelHorasTotales = new Label();
             DateTime = new DateTimePicker();
             label3 = new Label();
             label7 = new Label();
@@ -67,7 +69,7 @@
             label10 = new Label();
             label9 = new Label();
             PanelGestionProyect.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProyecto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NumericUpDownHorasTotales).BeginInit();
             PanelUsuario.SuspendLayout();
             PanelTareas.SuspendLayout();
@@ -77,26 +79,26 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // LabelGestionDeProyectos
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(177, 23);
-            label1.TabIndex = 0;
-            label1.Text = "Gestion de Proyectos";
+            LabelGestionDeProyectos.AutoSize = true;
+            LabelGestionDeProyectos.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelGestionDeProyectos.Location = new Point(12, 10);
+            LabelGestionDeProyectos.Name = "LabelGestionDeProyectos";
+            LabelGestionDeProyectos.Size = new Size(177, 23);
+            LabelGestionDeProyectos.TabIndex = 0;
+            LabelGestionDeProyectos.Text = "Gestion de Proyectos";
             // 
-            // label2
+            // LabelNombre
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(43, 46);
-            label2.Name = "label2";
-            label2.Size = new Size(71, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Nombre:";
-            label2.Click += label2_Click;
+            LabelNombre.AutoSize = true;
+            LabelNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelNombre.Location = new Point(43, 46);
+            LabelNombre.Name = "LabelNombre";
+            LabelNombre.Size = new Size(71, 20);
+            LabelNombre.TabIndex = 1;
+            LabelNombre.Text = "Nombre:";
+            LabelNombre.Click += label2_Click;
             // 
             // TextBoxNamePro
             // 
@@ -112,28 +114,46 @@
             // 
             PanelGestionProyect.BackColor = Color.FromArgb(64, 64, 64);
             PanelGestionProyect.BorderStyle = BorderStyle.Fixed3D;
+            PanelGestionProyect.Controls.Add(LabelEstado);
+            PanelGestionProyect.Controls.Add(ComboBoxStatus);
             PanelGestionProyect.Controls.Add(TextBoxDescription);
-            PanelGestionProyect.Controls.Add(label6);
+            PanelGestionProyect.Controls.Add(LabelDescripction);
             PanelGestionProyect.Controls.Add(AgregarProButton);
             PanelGestionProyect.Controls.Add(ActualizarButton);
-            PanelGestionProyect.Controls.Add(dataGridView);
+            PanelGestionProyect.Controls.Add(dataGridViewProyecto);
             PanelGestionProyect.Controls.Add(NumericUpDownHorasTotales);
-            PanelGestionProyect.Controls.Add(numericUpDown1);
-            PanelGestionProyect.Controls.Add(label1);
-            PanelGestionProyect.Controls.Add(EliminarButton);
-            PanelGestionProyect.Controls.Add(EditarButton);
+            PanelGestionProyect.Controls.Add(LabelGestionDeProyectos);
             PanelGestionProyect.Controls.Add(TextBoxNamePro);
             PanelGestionProyect.Controls.Add(GuardarButton);
-            PanelGestionProyect.Controls.Add(label2);
-            PanelGestionProyect.Controls.Add(label4);
-            PanelGestionProyect.Controls.Add(label5);
-            PanelGestionProyect.Controls.Add(dateTime);
+            PanelGestionProyect.Controls.Add(LabelNombre);
+            PanelGestionProyect.Controls.Add(LabelHorasTotales);
+            PanelGestionProyect.Controls.Add(DateTime);
             PanelGestionProyect.Controls.Add(label3);
             PanelGestionProyect.Location = new Point(37, 12);
             PanelGestionProyect.Name = "PanelGestionProyect";
-            PanelGestionProyect.Size = new Size(845, 515);
+            PanelGestionProyect.Size = new Size(845, 479);
             PanelGestionProyect.TabIndex = 3;
             PanelGestionProyect.Paint += panel1_Paint;
+            // 
+            // LabelEstado
+            // 
+            LabelEstado.AutoSize = true;
+            LabelEstado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelEstado.Location = new Point(54, 161);
+            LabelEstado.Name = "LabelEstado";
+            LabelEstado.Size = new Size(60, 20);
+            LabelEstado.TabIndex = 22;
+            LabelEstado.Text = "Estado:";
+            // 
+            // ComboBoxStatus
+            // 
+            ComboBoxStatus.BackColor = Color.Gray;
+            ComboBoxStatus.FormattingEnabled = true;
+            ComboBoxStatus.Items.AddRange(new object[] { "Pendiente", "Finalizado", "En Progreso" });
+            ComboBoxStatus.Location = new Point(120, 153);
+            ComboBoxStatus.Name = "ComboBoxStatus";
+            ComboBoxStatus.Size = new Size(151, 28);
+            ComboBoxStatus.TabIndex = 21;
             // 
             // TextBoxDescription
             // 
@@ -143,146 +163,68 @@
             TextBoxDescription.Size = new Size(263, 27);
             TextBoxDescription.TabIndex = 20;
             // 
-            // label6
+            // LabelDescripction
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(20, 108);
-            label6.Name = "label6";
-            label6.Size = new Size(94, 20);
-            label6.TabIndex = 19;
-            label6.Text = "Descripcion:";
-            label6.Click += label6_Click;
+            LabelDescripction.AutoSize = true;
+            LabelDescripction.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelDescripction.Location = new Point(20, 108);
+            LabelDescripction.Name = "LabelDescripction";
+            LabelDescripction.Size = new Size(94, 20);
+            LabelDescripction.TabIndex = 19;
+            LabelDescripction.Text = "Descripcion:";
+            LabelDescripction.Click += label6_Click;
             // 
             // AgregarProButton
             // 
             AgregarProButton.BackColor = Color.FromArgb(64, 64, 64);
             AgregarProButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            AgregarProButton.Location = new Point(409, 101);
+            AgregarProButton.Location = new Point(230, 219);
             AgregarProButton.Name = "AgregarProButton";
             AgregarProButton.Size = new Size(94, 29);
             AgregarProButton.TabIndex = 18;
             AgregarProButton.Text = "Agregar ";
             AgregarProButton.UseVisualStyleBackColor = false;
+            AgregarProButton.Click += AgregarProButton_Click;
             // 
             // ActualizarButton
             // 
             ActualizarButton.BackColor = Color.FromArgb(64, 64, 64);
             ActualizarButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             ActualizarButton.ForeColor = Color.White;
-            ActualizarButton.Location = new Point(731, 244);
+            ActualizarButton.Location = new Point(357, 219);
             ActualizarButton.Name = "ActualizarButton";
             ActualizarButton.Size = new Size(94, 29);
             ActualizarButton.TabIndex = 17;
             ActualizarButton.Text = "Actualizar";
             ActualizarButton.UseVisualStyleBackColor = false;
             // 
-            // dataGridView2
+            // dataGridViewProyecto
             // 
-            dataGridView2.BackgroundColor = Color.DimGray;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(18, 366);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(807, 130);
-            dataGridView2.TabIndex = 16;
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            dataGridViewProyecto.BackgroundColor = Color.DimGray;
+            dataGridViewProyecto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProyecto.Location = new Point(18, 269);
+            dataGridViewProyecto.Name = "dataGridViewProyecto";
+            dataGridViewProyecto.RowHeadersWidth = 51;
+            dataGridViewProyecto.RowTemplate.Height = 29;
+            dataGridViewProyecto.Size = new Size(807, 184);
+            dataGridViewProyecto.TabIndex = 16;
+            dataGridViewProyecto.CellContentClick += dataGridView2_CellContentClick;
             // 
-            // GroupBoxEstado
+            // NumericUpDownHorasTotales
             // 
-            GroupBoxEstado.Controls.Add(CheckBoxFin);
-            GroupBoxEstado.Controls.Add(CheckBoxPend);
-            GroupBoxEstado.Controls.Add(CheckBoxProgre);
-            GroupBoxEstado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            GroupBoxEstado.ForeColor = SystemColors.ButtonFace;
-            GroupBoxEstado.Location = new Point(441, 213);
-            GroupBoxEstado.Name = "GroupBoxEstado";
-            GroupBoxEstado.Size = new Size(250, 125);
-            GroupBoxEstado.TabIndex = 14;
-            GroupBoxEstado.TabStop = false;
-            GroupBoxEstado.Text = "Estado";
-            // 
-            // CheckBoxFin
-            // 
-            CheckBoxFin.AutoSize = true;
-            CheckBoxFin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            CheckBoxFin.Location = new Point(8, 31);
-            CheckBoxFin.Name = "CheckBoxFin";
-            CheckBoxFin.Size = new Size(101, 24);
-            CheckBoxFin.TabIndex = 11;
-            CheckBoxFin.Text = "Finalizado";
-            CheckBoxFin.UseVisualStyleBackColor = true;
-            CheckBoxFin.CheckedChanged += checkBox3_CheckedChanged;
-            // 
-            // CheckBoxPend
-            // 
-            CheckBoxPend.AutoSize = true;
-            CheckBoxPend.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            CheckBoxPend.Location = new Point(8, 61);
-            CheckBoxPend.Name = "CheckBoxPend";
-            CheckBoxPend.Size = new Size(101, 24);
-            CheckBoxPend.TabIndex = 9;
-            CheckBoxPend.Text = "Pendiente";
-            CheckBoxPend.UseVisualStyleBackColor = true;
-            // 
-            // CheckBoxProgre
-            // 
-            CheckBoxProgre.AutoSize = true;
-            CheckBoxProgre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            CheckBoxProgre.Location = new Point(8, 91);
-            CheckBoxProgre.Name = "CheckBoxProgre";
-            CheckBoxProgre.Size = new Size(115, 24);
-            CheckBoxProgre.TabIndex = 10;
-            CheckBoxProgre.Text = "En Progreso";
-            CheckBoxProgre.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown2
-            // 
-            numericUpDown2.BackColor = Color.Gray;
-            numericUpDown2.ForeColor = SystemColors.Window;
-            numericUpDown2.Location = new Point(157, 262);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(54, 27);
-            numericUpDown2.TabIndex = 13;
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.BackColor = Color.Gray;
-            numericUpDown1.ForeColor = SystemColors.Window;
-            numericUpDown1.Location = new Point(157, 225);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(54, 27);
-            numericUpDown1.TabIndex = 12;
-            // 
-            // EliminarButton
-            // 
-            EliminarButton.BackColor = Color.FromArgb(64, 64, 64);
-            EliminarButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            EliminarButton.ForeColor = Color.White;
-            EliminarButton.Location = new Point(731, 281);
-            EliminarButton.Name = "EliminarButton";
-            EliminarButton.Size = new Size(94, 29);
-            EliminarButton.TabIndex = 3;
-            EliminarButton.Text = "Eliminar";
-            EliminarButton.UseVisualStyleBackColor = false;
-            // 
-            // EditarButton
-            // 
-            EditarButton.BackColor = Color.FromArgb(64, 64, 64);
-            EditarButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            EditarButton.Location = new Point(731, 316);
-            EditarButton.Name = "EditarButton";
-            EditarButton.Size = new Size(94, 29);
-            EditarButton.TabIndex = 2;
-            EditarButton.Text = "Editar";
-            EditarButton.UseVisualStyleBackColor = false;
+            NumericUpDownHorasTotales.BackColor = Color.Gray;
+            NumericUpDownHorasTotales.ForeColor = SystemColors.Window;
+            NumericUpDownHorasTotales.Location = new Point(544, 39);
+            NumericUpDownHorasTotales.Name = "NumericUpDownHorasTotales";
+            NumericUpDownHorasTotales.Size = new Size(54, 27);
+            NumericUpDownHorasTotales.TabIndex = 13;
+            NumericUpDownHorasTotales.ValueChanged += NumericUpDownHorasTotal_ValueChanged;
             // 
             // GuardarButton
             // 
             GuardarButton.BackColor = Color.FromArgb(64, 64, 64);
             GuardarButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            GuardarButton.Location = new Point(731, 209);
+            GuardarButton.Location = new Point(491, 219);
             GuardarButton.Name = "GuardarButton";
             GuardarButton.Size = new Size(94, 29);
             GuardarButton.TabIndex = 1;
@@ -290,25 +232,15 @@
             GuardarButton.UseVisualStyleBackColor = false;
             GuardarButton.Click += button1_Click;
             // 
-            // label4
+            // LabelHorasTotales
             // 
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(18, 227);
-            label4.Name = "label4";
-            label4.Size = new Size(133, 20);
-            label4.TabIndex = 6;
-            label4.Text = "Horas Trabajadas:";
-            label4.Click += label4_Click;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(430, 43);
-            label5.Name = "label5";
-            label5.Size = new Size(108, 20);
-            label5.TabIndex = 7;
-            label5.Text = "Horas Totales:";
+            LabelHorasTotales.AutoSize = true;
+            LabelHorasTotales.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelHorasTotales.Location = new Point(430, 43);
+            LabelHorasTotales.Name = "LabelHorasTotales";
+            LabelHorasTotales.Size = new Size(108, 20);
+            LabelHorasTotales.TabIndex = 7;
+            LabelHorasTotales.Text = "Horas Totales:";
             // 
             // DateTime
             // 
@@ -392,7 +324,7 @@
             PanelTareas.Controls.Add(GroupBoxEstado2);
             PanelTareas.Controls.Add(TextBoxProyect);
             PanelTareas.Controls.Add(TextBoxEmpAsig);
-            PanelTareas.Controls.Add(dataGridView1);
+            PanelTareas.Controls.Add(dataGridView2);
             PanelTareas.Controls.Add(dateTimePicker2);
             PanelTareas.Controls.Add(label15);
             PanelTareas.Controls.Add(label14);
@@ -529,17 +461,17 @@
             TextBoxEmpAsig.Size = new Size(135, 27);
             TextBoxEmpAsig.TabIndex = 14;
             // 
-            // dataGridView1
+            // dataGridView2
             // 
-            dataGridView1.BackgroundColor = Color.DimGray;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 211);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(813, 127);
-            dataGridView1.TabIndex = 13;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView2.BackgroundColor = Color.DimGray;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(12, 211);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 29;
+            dataGridView2.Size = new Size(813, 127);
+            dataGridView2.TabIndex = 13;
+            dataGridView2.CellContentClick += dataGridView1_CellContentClick;
             // 
             // dateTimePicker2
             // 
@@ -617,7 +549,7 @@
             Load += Form1_Load;
             PanelGestionProyect.ResumeLayout(false);
             PanelGestionProyect.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProyecto).EndInit();
             ((System.ComponentModel.ISupportInitialize)NumericUpDownHorasTotales).EndInit();
             PanelUsuario.ResumeLayout(false);
             PanelUsuario.PerformLayout();
@@ -628,20 +560,20 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             GroupBoxEstado2.ResumeLayout(false);
             GroupBoxEstado2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
+        private Label LabelGestionDeProyectos;
+        private Label LabelNombre;
         private TextBox TextBoxNamePro;
         private Panel PanelGestionProyect;
         private Button GuardarButton;
         private Label label3;
         private DateTimePicker DateTime;
-        private Label label5;
+        private Label LabelHorasTotales;
         private Label label7;
         private Label label8;
         private TextBox TextBoxUsu;
@@ -665,12 +597,14 @@
         private TextBox TextBoxProyect;
         private GroupBox GroupBoxArea;
         private GroupBox GroupBoxEstado2;
-        private DataGridView dataGridView;
+        private DataGridView dataGridViewProyecto;
         private Button ActualizarButton;
         private Button AgregarProButton;
         private Button AgregarUsuButton;
         private Button IngresarTareaButton;
-        private Label label6;
+        private Label LabelDescripction;
         private TextBox TextBoxDescription;
+        private ComboBox ComboBoxStatus;
+        private Label LabelEstado;
     }
 }
