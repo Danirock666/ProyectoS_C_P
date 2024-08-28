@@ -10,29 +10,20 @@ namespace ProyectoS_C_P.services
     {
         private readonly string groupKey = "/ejemplo";
 
-        // Método para obtener la lista de proyectos 
         public async Task<List<Proyecto>> Index()
         {
-            //declarar una variable para almacenar la respuesta de la API
-            //la variable debe ser del tipo de la respuesta esperada
-            //en este caso, la respuesta es una lista de proyectos
             RespuestaListaDeProyectos respuestaApi;
             try
             {
                 string path = $"/projects{groupKey}";
                 string body = "";
                 var response = await SendTransaction(path, body, "GET");
-
-                // Convertir Data a cadena JSON
                 string jsonRespuestaApi = response.Data.ToString();
-
-                // Deserializar la respuesta de la API a un objeto de tipo RespuestaListaDeProyectos          
                 respuestaApi = JsonSerializer.Deserialize<RespuestaListaDeProyectos>(jsonRespuestaApi);
 
-                /* Aquí podrías validar si hay algun error con la respuesta según su código*/
                 if (respuestaApi.Code != 200)
                 {
-                    /* cualquier cosa que quieras hacer pa mostrar el error*/
+                    // Manejo de error si es necesario
                 }
             }
             catch (Exception ex)
@@ -43,35 +34,27 @@ namespace ProyectoS_C_P.services
             return respuestaApi.Data;
         }
 
-        // Método para obtener un proyecto específico por ID (Read)
         public async Task<Proyecto> Show(int projectId)
         {
-            //no agregué el try catch porque ya está en el método Index el ejemplo
-            //no seas flojo, implementa el try catch en este método también
-            //si no lo haces, el programa se caerá si hay un error y no tendrás idea de qué pasó
-
             string path = $"/projects/{projectId}{groupKey}";
             string body = "";
             var jsonRespuestaApi = await SendTransaction(path, body, "GET");
-
             RespuestaProyecto RespuestaApi = JsonSerializer.Deserialize<RespuestaProyecto>(jsonRespuestaApi.Data.ToString());
 
             return RespuestaApi.Data;
         }
 
-        // Método para crear un nuevo proyecto (Create)
-        public async Task<String> Create(object nuevoProyecto)
+        public async Task<string> Create(object nuevoProyecto)
         {
             string respuestaApi = null;
             string path = $"/projects{groupKey}";
 
             try
             {
-                // Serializar el objeto anónimo a JSON, ya que la api debe recibir ese formato, no un obj de .net
                 string proyectoJson = JsonSerializer.Serialize(nuevoProyecto);
                 var jsonRespuestaApi = await SendTransaction(path, proyectoJson, "POST");
 
-                if (jsonRespuestaApi.Code == 201) //codigo http quiere decir que se creó el proyecto
+                if (jsonRespuestaApi.Code == 201)
                 {
                     respuestaApi = jsonRespuestaApi.Message;
                 }
@@ -84,8 +67,6 @@ namespace ProyectoS_C_P.services
             return respuestaApi;
         }
 
-
-        // Método para actualizar un proyecto existente (Update)
         public async Task<string> Update(int projectId, object proyectoActualizado)
         {
             string respuestaApi = null;
@@ -93,11 +74,10 @@ namespace ProyectoS_C_P.services
 
             try
             {
-                // Serializar el objeto actualizado a JSON
                 string proyectoJson = JsonSerializer.Serialize(proyectoActualizado);
                 var jsonRespuestaApi = await SendTransaction(path, proyectoJson, "PUT");
 
-                if (jsonRespuestaApi.Code == 200) // Código HTTP que indica que la actualización fue exitosa
+                if (jsonRespuestaApi.Code == 200)
                 {
                     respuestaApi = jsonRespuestaApi.Message;
                 }
@@ -111,7 +91,6 @@ namespace ProyectoS_C_P.services
             return respuestaApi;
         }
 
-        // Método para eliminar un proyecto existente (Delete)
         public async Task<string> Delete(int projectId)
         {
             string respuestaApi = null;
@@ -121,7 +100,7 @@ namespace ProyectoS_C_P.services
             {
                 var jsonRespuestaApi = await SendTransaction(path, string.Empty, "DELETE");
 
-                if (jsonRespuestaApi.Code == 200) // Código HTTP que indica que la eliminación fue exitosa
+                if (jsonRespuestaApi.Code == 200)
                 {
                     respuestaApi = jsonRespuestaApi.Message;
                 }
