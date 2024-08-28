@@ -274,9 +274,9 @@
             PanelTareas.Controls.Add(label12);
             PanelTareas.Controls.Add(label10);
             PanelTareas.Controls.Add(label9);
-            PanelTareas.Location = new Point(37, 476);
+            PanelTareas.Location = new Point(37, 486);
             PanelTareas.Name = "PanelTareas";
-            PanelTareas.Size = new Size(926, 563);
+            PanelTareas.Size = new Size(926, 553);
             PanelTareas.TabIndex = 16;
             // 
             // label1
@@ -387,11 +387,11 @@
             // 
             dataGridView2.BackgroundColor = Color.DimGray;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(18, 213);
+            dataGridView2.Location = new Point(18, 277);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(887, 324);
+            dataGridView2.Size = new Size(887, 260);
             dataGridView2.TabIndex = 13;
             dataGridView2.CellContentClick += dataGridView1_CellContentClick;
             // 
