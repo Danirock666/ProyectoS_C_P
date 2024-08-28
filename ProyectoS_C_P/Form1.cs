@@ -44,8 +44,9 @@ namespace ProyectoS_C_P
 
                 //se debe serializar el objeto anónimo a JSON para enviarlo a la API
                 var proyectoCreado = await projectService.Create(nuevoProyecto);
-
-                MessageBox.Show(proyectoCreado); //debería mostrar el mensaje de la API
+                
+               // MessageBox.Show()
+                 //debería mostrar el mensaje de la API
 
             });
         }
