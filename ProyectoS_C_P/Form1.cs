@@ -56,7 +56,7 @@ namespace ProyectoS_C_P
             proyecto.Name = TextBoxNamePro.Text;
             proyecto.Description = TextBoxDescription.Text;
             proyecto.Status = ComboBoxStatus.SelectedItem.ToString();
-            proyecto.TotalHours = (string)NumericUpDownHorasTotales.ProductVersion;//error solucionado
+            proyecto.TotalHours = (string)NumericUpDownHorasTotales.ProductVersion;
             DateTime @new = System.DateTime.Now;
             proyecto.CreatedAt = @new;
 

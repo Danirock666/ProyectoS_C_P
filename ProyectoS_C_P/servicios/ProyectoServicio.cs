@@ -85,6 +85,54 @@ namespace ProyectoS_C_P.services
         }
 
 
-        //implementa los métodos Update y Delete siguiendo el mismo patrón de los métodos anteriores
+        // Método para actualizar un proyecto existente (Update)
+        public async Task<string> Update(int projectId, object proyectoActualizado)
+        {
+            string respuestaApi = null;
+            string path = $"/projects/{projectId}{groupKey}";
+
+            try
+            {
+                // Serializar el objeto actualizado a JSON
+                string proyectoJson = JsonSerializer.Serialize(proyectoActualizado);
+                var jsonRespuestaApi = await SendTransaction(path, proyectoJson, "PUT");
+
+                if (jsonRespuestaApi.Code == 200) // Código HTTP que indica que la actualización fue exitosa
+                {
+                    respuestaApi = jsonRespuestaApi.Message;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+
+            return respuestaApi;
+        }
+
+        // Método para eliminar un proyecto existente (Delete)
+        public async Task<string> Delete(int projectId)
+        {
+            string respuestaApi = null;
+            string path = $"/projects/{projectId}{groupKey}";
+
+            try
+            {
+                var jsonRespuestaApi = await SendTransaction(path, string.Empty, "DELETE");
+
+                if (jsonRespuestaApi.Code == 200) // Código HTTP que indica que la eliminación fue exitosa
+                {
+                    respuestaApi = jsonRespuestaApi.Message;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+
+            return respuestaApi;
+        }
     }
 }
