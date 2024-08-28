@@ -71,26 +71,13 @@ namespace ProyectoS_C_P
 
             proyecto.TotalHours = (int)NumericUpDownHorasTotales.Value;
 
-            proyecto.TotalHours = (string)NumericUpDownHorasTotales.ProductVersion;
-
-
-            proyecto.TotalHours = (string)NumericUpDownHorasTotales.ProductVersion;
-
             DateTime @new = System.DateTime.Now;
             proyecto.CreatedAt = @new;
 
             proyectos.Add(proyecto);
             ActualizarDataCridView();
         }
-        private void AgregarUsuButton_Click(object sender, EventArgs e)
-        {
-            Usuario usuario = new();
-
-            usuario.Name = TextBoxUsu.Text;
-
-            usuarios.Add(usuario);
-            ActualizarDataCridView();
-        }
+        
         private void IngresarTareaButton_Click(object sender, EventArgs e)
         {
             Tarea tarea = new();
