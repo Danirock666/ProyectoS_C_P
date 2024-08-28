@@ -23,7 +23,7 @@ namespace ProyectoS_C_P.modelos
         public string Status { get; set; }
 
         [JsonPropertyName("Hours")]
-        public string Hours { get; set; }
+        public int Hours { get; set; }
 
         [JsonPropertyName("area")]
         public string Area { get; set; }

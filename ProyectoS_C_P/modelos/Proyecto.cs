@@ -22,7 +22,7 @@ namespace ProyectoS_C_P.modelos
         public string Status { get; set; }
 
         [JsonPropertyName("totalHours")]
-        public string TotalHours { get; set; }
+        public int TotalHours { get; set; }
 
         [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; }

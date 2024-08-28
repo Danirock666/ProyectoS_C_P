@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             LabelGestionDeProyectos = new Label();
             LabelNombre = new Label();
             TextBoxNamePro = new TextBox();
@@ -44,25 +45,19 @@
             LabelHorasTotales = new Label();
             DateTime = new DateTimePicker();
             label3 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            TextBoxUsu = new TextBox();
-            PanelUsuario = new Panel();
-            AgregarUsuButton = new Button();
             PanelTareas = new Panel();
+            label1 = new Label();
+            TextBoxDescription2 = new TextBox();
             IngresarTareaButton = new Button();
             GroupBoxArea = new GroupBox();
-            checkBox7 = new CheckBox();
-            checkBox8 = new CheckBox();
+            ComboBoxArea = new ComboBox();
             numericUpDown3 = new NumericUpDown();
             GroupBoxEstado2 = new GroupBox();
-            checkBox4 = new CheckBox();
-            checkBox5 = new CheckBox();
-            checkBox6 = new CheckBox();
+            ComboBoxStatus2 = new ComboBox();
             TextBoxProyect = new TextBox();
             TextBoxEmpAsig = new TextBox();
             dataGridView2 = new DataGridView();
-            dateTimePicker2 = new DateTimePicker();
+            StarDateTime = new DateTimePicker();
             label15 = new Label();
             label14 = new Label();
             label12 = new Label();
@@ -71,7 +66,6 @@
             PanelGestionProyect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProyecto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NumericUpDownHorasTotales).BeginInit();
-            PanelUsuario.SuspendLayout();
             PanelTareas.SuspendLayout();
             GroupBoxArea.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
@@ -93,7 +87,7 @@
             // 
             LabelNombre.AutoSize = true;
             LabelNombre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LabelNombre.Location = new Point(43, 46);
+            LabelNombre.Location = new Point(43, 50);
             LabelNombre.Name = "LabelNombre";
             LabelNombre.Size = new Size(71, 20);
             LabelNombre.TabIndex = 1;
@@ -131,7 +125,7 @@
             PanelGestionProyect.Controls.Add(label3);
             PanelGestionProyect.Location = new Point(37, 12);
             PanelGestionProyect.Name = "PanelGestionProyect";
-            PanelGestionProyect.Size = new Size(845, 479);
+            PanelGestionProyect.Size = new Size(926, 444);
             PanelGestionProyect.TabIndex = 3;
             PanelGestionProyect.Paint += panel1_Paint;
             // 
@@ -139,7 +133,7 @@
             // 
             LabelEstado.AutoSize = true;
             LabelEstado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LabelEstado.Location = new Point(54, 161);
+            LabelEstado.Location = new Point(54, 132);
             LabelEstado.Name = "LabelEstado";
             LabelEstado.Size = new Size(60, 20);
             LabelEstado.TabIndex = 22;
@@ -150,7 +144,7 @@
             ComboBoxStatus.BackColor = Color.Gray;
             ComboBoxStatus.FormattingEnabled = true;
             ComboBoxStatus.Items.AddRange(new object[] { "Pendiente", "Finalizado", "En Progreso" });
-            ComboBoxStatus.Location = new Point(120, 153);
+            ComboBoxStatus.Location = new Point(120, 124);
             ComboBoxStatus.Name = "ComboBoxStatus";
             ComboBoxStatus.Size = new Size(151, 28);
             ComboBoxStatus.TabIndex = 21;
@@ -158,7 +152,7 @@
             // TextBoxDescription
             // 
             TextBoxDescription.BackColor = Color.Gray;
-            TextBoxDescription.Location = new Point(120, 101);
+            TextBoxDescription.Location = new Point(120, 83);
             TextBoxDescription.Name = "TextBoxDescription";
             TextBoxDescription.Size = new Size(263, 27);
             TextBoxDescription.TabIndex = 20;
@@ -167,7 +161,7 @@
             // 
             LabelDescripction.AutoSize = true;
             LabelDescripction.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            LabelDescripction.Location = new Point(20, 108);
+            LabelDescripction.Location = new Point(20, 90);
             LabelDescripction.Name = "LabelDescripction";
             LabelDescripction.Size = new Size(94, 20);
             LabelDescripction.TabIndex = 19;
@@ -178,7 +172,7 @@
             // 
             AgregarProButton.BackColor = Color.FromArgb(64, 64, 64);
             AgregarProButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            AgregarProButton.Location = new Point(230, 219);
+            AgregarProButton.Location = new Point(421, 157);
             AgregarProButton.Name = "AgregarProButton";
             AgregarProButton.Size = new Size(94, 29);
             AgregarProButton.TabIndex = 18;
@@ -191,7 +185,7 @@
             ActualizarButton.BackColor = Color.FromArgb(64, 64, 64);
             ActualizarButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             ActualizarButton.ForeColor = Color.White;
-            ActualizarButton.Location = new Point(357, 219);
+            ActualizarButton.Location = new Point(544, 157);
             ActualizarButton.Name = "ActualizarButton";
             ActualizarButton.Size = new Size(94, 29);
             ActualizarButton.TabIndex = 17;
@@ -202,11 +196,11 @@
             // 
             dataGridViewProyecto.BackgroundColor = Color.DimGray;
             dataGridViewProyecto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProyecto.Location = new Point(18, 269);
+            dataGridViewProyecto.Location = new Point(18, 213);
             dataGridViewProyecto.Name = "dataGridViewProyecto";
             dataGridViewProyecto.RowHeadersWidth = 51;
             dataGridViewProyecto.RowTemplate.Height = 29;
-            dataGridViewProyecto.Size = new Size(807, 184);
+            dataGridViewProyecto.Size = new Size(881, 201);
             dataGridViewProyecto.TabIndex = 16;
             dataGridViewProyecto.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -224,7 +218,7 @@
             // 
             GuardarButton.BackColor = Color.FromArgb(64, 64, 64);
             GuardarButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            GuardarButton.Location = new Point(491, 219);
+            GuardarButton.Location = new Point(668, 157);
             GuardarButton.Name = "GuardarButton";
             GuardarButton.Size = new Size(94, 29);
             GuardarButton.TabIndex = 1;
@@ -261,63 +255,12 @@
             label3.Text = "Fecha Creacion:";
             label3.Click += label3_Click;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Black", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(14, 14);
-            label7.Name = "label7";
-            label7.Size = new Size(75, 23);
-            label7.TabIndex = 12;
-            label7.Text = "Usuario";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(18, 46);
-            label8.Name = "label8";
-            label8.Size = new Size(71, 20);
-            label8.TabIndex = 13;
-            label8.Text = "Nombre:";
-            // 
-            // TextBoxUsu
-            // 
-            TextBoxUsu.BackColor = Color.Gray;
-            TextBoxUsu.ForeColor = SystemColors.Window;
-            TextBoxUsu.Location = new Point(108, 43);
-            TextBoxUsu.Name = "TextBoxUsu";
-            TextBoxUsu.Size = new Size(202, 27);
-            TextBoxUsu.TabIndex = 14;
-            // 
-            // PanelUsuario
-            // 
-            PanelUsuario.BackColor = Color.FromArgb(64, 64, 64);
-            PanelUsuario.BorderStyle = BorderStyle.Fixed3D;
-            PanelUsuario.Controls.Add(AgregarUsuButton);
-            PanelUsuario.Controls.Add(label7);
-            PanelUsuario.Controls.Add(TextBoxUsu);
-            PanelUsuario.Controls.Add(label8);
-            PanelUsuario.Location = new Point(37, 514);
-            PanelUsuario.Name = "PanelUsuario";
-            PanelUsuario.Size = new Size(845, 143);
-            PanelUsuario.TabIndex = 15;
-            // 
-            // AgregarUsuButton
-            // 
-            AgregarUsuButton.BackColor = Color.FromArgb(64, 64, 64);
-            AgregarUsuButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            AgregarUsuButton.Location = new Point(321, 41);
-            AgregarUsuButton.Name = "AgregarUsuButton";
-            AgregarUsuButton.Size = new Size(94, 29);
-            AgregarUsuButton.TabIndex = 15;
-            AgregarUsuButton.Text = "Agregar Usuario";
-            AgregarUsuButton.UseVisualStyleBackColor = false;
-            // 
             // PanelTareas
             // 
             PanelTareas.BackColor = Color.FromArgb(64, 64, 64);
             PanelTareas.BorderStyle = BorderStyle.Fixed3D;
+            PanelTareas.Controls.Add(label1);
+            PanelTareas.Controls.Add(TextBoxDescription2);
             PanelTareas.Controls.Add(IngresarTareaButton);
             PanelTareas.Controls.Add(GroupBoxArea);
             PanelTareas.Controls.Add(numericUpDown3);
@@ -325,129 +268,108 @@
             PanelTareas.Controls.Add(TextBoxProyect);
             PanelTareas.Controls.Add(TextBoxEmpAsig);
             PanelTareas.Controls.Add(dataGridView2);
-            PanelTareas.Controls.Add(dateTimePicker2);
+            PanelTareas.Controls.Add(StarDateTime);
             PanelTareas.Controls.Add(label15);
             PanelTareas.Controls.Add(label14);
             PanelTareas.Controls.Add(label12);
             PanelTareas.Controls.Add(label10);
             PanelTareas.Controls.Add(label9);
-            PanelTareas.Location = new Point(37, 681);
+            PanelTareas.Location = new Point(37, 476);
             PanelTareas.Name = "PanelTareas";
-            PanelTareas.Size = new Size(845, 358);
+            PanelTareas.Size = new Size(926, 563);
             PanelTareas.TabIndex = 16;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 82);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 20);
+            label1.TabIndex = 19;
+            label1.Text = "Descripcion:";
+            // 
+            // TextBoxDescription2
+            // 
+            TextBoxDescription2.BackColor = Color.Gray;
+            TextBoxDescription2.ForeColor = SystemColors.Window;
+            TextBoxDescription2.Location = new Point(108, 82);
+            TextBoxDescription2.Name = "TextBoxDescription2";
+            TextBoxDescription2.Size = new Size(250, 27);
+            TextBoxDescription2.TabIndex = 18;
             // 
             // IngresarTareaButton
             // 
             IngresarTareaButton.BackColor = Color.FromArgb(64, 64, 64);
             IngresarTareaButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            IngresarTareaButton.Location = new Point(626, 163);
+            IngresarTareaButton.Location = new Point(714, 158);
             IngresarTareaButton.Name = "IngresarTareaButton";
             IngresarTareaButton.Size = new Size(94, 29);
             IngresarTareaButton.TabIndex = 17;
             IngresarTareaButton.Text = "Ingresar";
             IngresarTareaButton.UseVisualStyleBackColor = false;
+            IngresarTareaButton.Click += IngresarTareaButton_Click;
             // 
             // GroupBoxArea
             // 
             GroupBoxArea.BackColor = Color.FromArgb(64, 64, 64);
-            GroupBoxArea.Controls.Add(checkBox7);
-            GroupBoxArea.Controls.Add(checkBox8);
+            GroupBoxArea.Controls.Add(ComboBoxArea);
             GroupBoxArea.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             GroupBoxArea.ForeColor = SystemColors.ButtonFace;
-            GroupBoxArea.Location = new Point(209, 82);
+            GroupBoxArea.Location = new Point(385, 34);
             GroupBoxArea.Name = "GroupBoxArea";
-            GroupBoxArea.Size = new Size(115, 93);
+            GroupBoxArea.Size = new Size(165, 64);
             GroupBoxArea.TabIndex = 16;
             GroupBoxArea.TabStop = false;
             GroupBoxArea.Text = "Area";
             GroupBoxArea.Enter += groupBox3_Enter;
             // 
-            // checkBox7
+            // ComboBoxArea
             // 
-            checkBox7.AutoSize = true;
-            checkBox7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox7.Location = new Point(6, 26);
-            checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(99, 24);
-            checkBox7.TabIndex = 11;
-            checkBox7.Text = "Hardware";
-            checkBox7.UseVisualStyleBackColor = true;
-            checkBox7.CheckedChanged += checkBox7_CheckedChanged;
-            // 
-            // checkBox8
-            // 
-            checkBox8.AutoSize = true;
-            checkBox8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox8.Location = new Point(6, 56);
-            checkBox8.Name = "checkBox8";
-            checkBox8.Size = new Size(73, 24);
-            checkBox8.TabIndex = 12;
-            checkBox8.Text = "Redes";
-            checkBox8.UseVisualStyleBackColor = true;
+            ComboBoxArea.BackColor = Color.Gray;
+            ComboBoxArea.FormattingEnabled = true;
+            ComboBoxArea.Items.AddRange(new object[] { "Hardware", "Redes" });
+            ComboBoxArea.Location = new Point(8, 26);
+            ComboBoxArea.Name = "ComboBoxArea";
+            ComboBoxArea.Size = new Size(151, 28);
+            ComboBoxArea.TabIndex = 23;
             // 
             // numericUpDown3
             // 
             numericUpDown3.BackColor = Color.Gray;
             numericUpDown3.ForeColor = SystemColors.Window;
-            numericUpDown3.Location = new Point(626, 108);
+            numericUpDown3.Location = new Point(714, 110);
             numericUpDown3.Name = "numericUpDown3";
             numericUpDown3.Size = new Size(58, 27);
             numericUpDown3.TabIndex = 16;
             // 
             // GroupBoxEstado2
             // 
-            GroupBoxEstado2.Controls.Add(checkBox4);
-            GroupBoxEstado2.Controls.Add(checkBox5);
-            GroupBoxEstado2.Controls.Add(checkBox6);
+            GroupBoxEstado2.Controls.Add(ComboBoxStatus2);
             GroupBoxEstado2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             GroupBoxEstado2.ForeColor = SystemColors.ButtonFace;
-            GroupBoxEstado2.Location = new Point(12, 82);
+            GroupBoxEstado2.Location = new Point(385, 112);
             GroupBoxEstado2.Name = "GroupBoxEstado2";
-            GroupBoxEstado2.Size = new Size(163, 114);
+            GroupBoxEstado2.Size = new Size(163, 64);
             GroupBoxEstado2.TabIndex = 15;
             GroupBoxEstado2.TabStop = false;
             GroupBoxEstado2.Text = "Estado";
             // 
-            // checkBox4
+            // ComboBoxStatus2
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox4.Location = new Point(6, 56);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(101, 24);
-            checkBox4.TabIndex = 8;
-            checkBox4.Text = "Pendiente";
-            checkBox4.UseVisualStyleBackColor = true;
-            checkBox4.CheckedChanged += checkBox4_CheckedChanged;
-            // 
-            // checkBox5
-            // 
-            checkBox5.AutoSize = true;
-            checkBox5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox5.Location = new Point(6, 26);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(101, 24);
-            checkBox5.TabIndex = 9;
-            checkBox5.Text = "Finalizado";
-            checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            checkBox6.AutoSize = true;
-            checkBox6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox6.Location = new Point(6, 86);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(115, 24);
-            checkBox6.TabIndex = 10;
-            checkBox6.Text = "En Progreso";
-            checkBox6.UseVisualStyleBackColor = true;
-            checkBox6.CheckedChanged += checkBox6_CheckedChanged;
+            ComboBoxStatus2.BackColor = Color.Gray;
+            ComboBoxStatus2.FormattingEnabled = true;
+            ComboBoxStatus2.Items.AddRange(new object[] { "Pendiente", "Finalizado", "En Progreso" });
+            ComboBoxStatus2.Location = new Point(6, 22);
+            ComboBoxStatus2.Name = "ComboBoxStatus2";
+            ComboBoxStatus2.Size = new Size(151, 28);
+            ComboBoxStatus2.TabIndex = 22;
             // 
             // TextBoxProyect
             // 
             TextBoxProyect.BackColor = Color.Gray;
             TextBoxProyect.ForeColor = SystemColors.Window;
-            TextBoxProyect.Location = new Point(626, 75);
+            TextBoxProyect.Location = new Point(714, 75);
             TextBoxProyect.Name = "TextBoxProyect";
             TextBoxProyect.Size = new Size(135, 27);
             TextBoxProyect.TabIndex = 15;
@@ -456,7 +378,7 @@
             // 
             TextBoxEmpAsig.BackColor = Color.Gray;
             TextBoxEmpAsig.ForeColor = SystemColors.Window;
-            TextBoxEmpAsig.Location = new Point(626, 42);
+            TextBoxEmpAsig.Location = new Point(714, 38);
             TextBoxEmpAsig.Name = "TextBoxEmpAsig";
             TextBoxEmpAsig.Size = new Size(135, 27);
             TextBoxEmpAsig.TabIndex = 14;
@@ -465,26 +387,26 @@
             // 
             dataGridView2.BackgroundColor = Color.DimGray;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(12, 211);
+            dataGridView2.Location = new Point(18, 213);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(813, 127);
+            dataGridView2.Size = new Size(887, 324);
             dataGridView2.TabIndex = 13;
             dataGridView2.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // dateTimePicker2
+            // StarDateTime
             // 
-            dateTimePicker2.Location = new Point(108, 44);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 27);
-            dateTimePicker2.TabIndex = 7;
+            StarDateTime.Location = new Point(108, 44);
+            StarDateTime.Name = "StarDateTime";
+            StarDateTime.Size = new Size(250, 27);
+            StarDateTime.TabIndex = 7;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.Location = new Point(459, 45);
+            label15.Location = new Point(556, 44);
             label15.Name = "label15";
             label15.Size = new Size(152, 20);
             label15.TabIndex = 6;
@@ -495,7 +417,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(536, 75);
+            label14.Location = new Point(633, 78);
             label14.Name = "label14";
             label14.Size = new Size(75, 20);
             label14.TabIndex = 5;
@@ -505,7 +427,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.Location = new Point(557, 112);
+            label12.Location = new Point(654, 112);
             label12.Name = "label12";
             label12.Size = new Size(54, 20);
             label12.TabIndex = 3;
@@ -538,12 +460,12 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
-            ClientSize = new Size(919, 1051);
+            ClientSize = new Size(985, 1051);
             Controls.Add(PanelTareas);
-            Controls.Add(PanelUsuario);
             Controls.Add(PanelGestionProyect);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Gestor Proyect";
             Load += Form1_Load;
@@ -551,15 +473,11 @@
             PanelGestionProyect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProyecto).EndInit();
             ((System.ComponentModel.ISupportInitialize)NumericUpDownHorasTotales).EndInit();
-            PanelUsuario.ResumeLayout(false);
-            PanelUsuario.PerformLayout();
             PanelTareas.ResumeLayout(false);
             PanelTareas.PerformLayout();
             GroupBoxArea.ResumeLayout(false);
-            GroupBoxArea.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             GroupBoxEstado2.ResumeLayout(false);
-            GroupBoxEstado2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
@@ -574,22 +492,13 @@
         private Label label3;
         private DateTimePicker DateTime;
         private Label LabelHorasTotales;
-        private Label label7;
-        private Label label8;
-        private TextBox TextBoxUsu;
-        private Panel PanelUsuario;
         private Panel PanelTareas;
         private Label label9;
         private Label label12;
         private Label label10;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker StarDateTime;
         private Label label15;
         private Label label14;
-        private CheckBox checkBox8;
-        private CheckBox checkBox7;
-        private CheckBox checkBox6;
-        private CheckBox checkBox5;
-        private CheckBox checkBox4;
         private DataGridView dataGridView2;
         private TextBox TextBoxEmpAsig;
         private NumericUpDown NumericUpDownHorasTotales;
@@ -600,11 +509,14 @@
         private DataGridView dataGridViewProyecto;
         private Button ActualizarButton;
         private Button AgregarProButton;
-        private Button AgregarUsuButton;
         private Button IngresarTareaButton;
         private Label LabelDescripction;
         private TextBox TextBoxDescription;
         private ComboBox ComboBoxStatus;
         private Label LabelEstado;
+        private ComboBox ComboBoxArea;
+        private ComboBox ComboBoxStatus2;
+        private Label label1;
+        private TextBox TextBoxDescription2;
     }
 }
