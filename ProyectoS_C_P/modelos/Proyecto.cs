@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ProyectoS_C_P.modelos
 {
@@ -27,5 +24,6 @@ namespace ProyectoS_C_P.modelos
         [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; }
 
+       
     }
 }

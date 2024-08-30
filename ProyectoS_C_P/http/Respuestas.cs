@@ -1,6 +1,10 @@
 ﻿using ProyectoS_C_P.modelos;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace ProyectoS_C_P.http
 {
@@ -29,29 +33,6 @@ namespace ProyectoS_C_P.http
     }
 
     public class RespuestaCreacionProyecto : RespuestaBase<Proyecto>
-    {
-    }
-
-    // Clase para manejar la respuesta de una lista de usuarios
-    public class RespuestaListaDeUsuarios : RespuestaBase<List<Usuario>>
-    {
-    }
-
-    // Clase para manejar la respuesta de un solo usuario
-    public class RespuestaUsuario : RespuestaBase<Usuario>
-    {
-    }
-    public class RespuestaListaDeTareas : RespuestaBase<List<Tarea>>
-    {
-    }
-
-    // Clase para manejar la respuesta de una sola tarea
-    public class RespuestaTarea : RespuestaBase<Tarea>
-    {
-    }
-
-    // Clase para manejar la respuesta de la creación de una tarea
-    public class RespuestaCreacionTarea : RespuestaBase<Tarea>
     {
     }
 }

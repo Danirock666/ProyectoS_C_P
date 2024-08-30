@@ -8,7 +8,7 @@ namespace ProyectoS_C_P.services
 {
     public class ProyectoServicio : ConexionAApi
     {
-        private readonly string e5F6g9H8 = "/e5F6g9H8";
+        private readonly string e5F6g9H8 = "/ejemplo";
 
         // Método para obtener la lista de proyectos 
         public async Task<List<Proyecto>> Index()
