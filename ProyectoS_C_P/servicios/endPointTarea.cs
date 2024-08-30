@@ -23,6 +23,9 @@ namespace ProyectoS_C_P.servicios
                 var response = await SendTransaction(path, body, "GET");
                 RespuestaListaDeTareas respuestaApi = JsonSerializer.Deserialize<RespuestaListaDeTareas>(response.Data.ToString());
                 taskList = respuestaApi.Data;
+
+
+
             }
             catch (Exception ex)
             {
