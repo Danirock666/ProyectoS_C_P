@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ProyectoS_C_P.servicios
 {
-    internal class EndPointTarea : ConexionAApi
+    internal class TareaServicio : ConexionAApi
     {
         private readonly string taskKey = "/task";
 
-        // Method to get a list of tasks (Index)
+        // Método para obtener la lista de tareas (Index)
         public async Task<List<Tarea>> Index()
         {
             List<Tarea> taskList = null;
@@ -23,9 +23,6 @@ namespace ProyectoS_C_P.servicios
                 var response = await SendTransaction(path, body, "GET");
                 RespuestaListaDeTareas respuestaApi = JsonSerializer.Deserialize<RespuestaListaDeTareas>(response.Data.ToString());
                 taskList = respuestaApi.Data;
-
-
-
             }
             catch (Exception ex)
             {
@@ -36,7 +33,7 @@ namespace ProyectoS_C_P.servicios
             return taskList;
         }
 
-        // Method to get a specific task by ID (Show)
+        // Método para obtener una tarea específica por ID (Show)
         public async Task<Tarea> Show(int taskId)
         {
             Tarea task = null;
@@ -58,7 +55,7 @@ namespace ProyectoS_C_P.servicios
             return task;
         }
 
-        // Method to create a new task (Create)
+        // Método para crear una nueva tarea (Create)
         public async Task<string> Create(object newTask)
         {
             string respuestaApi = null;
@@ -83,7 +80,7 @@ namespace ProyectoS_C_P.servicios
             return respuestaApi;
         }
 
-        // Method to update an existing task (Update)
+        // Método para actualizar una tarea existente (Update)
         public async Task<string> Update(int taskId, object updatedTask)
         {
             string respuestaApi = null;
@@ -108,7 +105,7 @@ namespace ProyectoS_C_P.servicios
             return respuestaApi;
         }
 
-        // Method to delete an existing task (Delete)
+        // Método para eliminar una tarea existente (Delete)
         public async Task<string> Delete(int taskId)
         {
             string respuestaApi = null;

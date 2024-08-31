@@ -39,19 +39,21 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
+            label8 = new Label();
+            comboBoxArea = new ComboBox();
             ButtonIngresarTar = new Button();
-            textBox3 = new TextBox();
+            textBoxDescriptionTarea = new TextBox();
             numericUpDown2 = new NumericUpDown();
             label7 = new Label();
             label6 = new Label();
-            dataGridView2 = new DataGridView();
+            tablaTarea = new DataGridView();
             label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tablaProyecto).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tablaTarea).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -164,17 +166,39 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(64, 64, 64);
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(comboBoxArea);
             panel2.Controls.Add(ButtonIngresarTar);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(textBoxDescriptionTarea);
             panel2.Controls.Add(numericUpDown2);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
-            panel2.Controls.Add(dataGridView2);
+            panel2.Controls.Add(tablaTarea);
             panel2.Controls.Add(label5);
             panel2.Location = new Point(12, 542);
             panel2.Name = "panel2";
             panel2.Size = new Size(1008, 486);
             panel2.TabIndex = 1;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(84, 170);
+            label8.Name = "label8";
+            label8.Size = new Size(46, 20);
+            label8.TabIndex = 14;
+            label8.Text = "Area:";
+            // 
+            // comboBoxArea
+            // 
+            comboBoxArea.FormattingEnabled = true;
+            comboBoxArea.Items.AddRange(new object[] { "HARWARE", "REDES" });
+            comboBoxArea.Location = new Point(136, 167);
+            comboBoxArea.Name = "comboBoxArea";
+            comboBoxArea.Size = new Size(151, 28);
+            comboBoxArea.TabIndex = 13;
             // 
             // ButtonIngresarTar
             // 
@@ -187,17 +211,18 @@
             ButtonIngresarTar.TabIndex = 12;
             ButtonIngresarTar.Text = "INGRESAR";
             ButtonIngresarTar.UseVisualStyleBackColor = false;
+            ButtonIngresarTar.Click += ButtonIngresarTar_Click;
             // 
-            // textBox3
+            // textBoxDescriptionTarea
             // 
-            textBox3.Location = new Point(136, 81);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(257, 27);
-            textBox3.TabIndex = 11;
+            textBoxDescriptionTarea.Location = new Point(136, 81);
+            textBoxDescriptionTarea.Name = "textBoxDescriptionTarea";
+            textBoxDescriptionTarea.Size = new Size(257, 27);
+            textBoxDescriptionTarea.TabIndex = 11;
             // 
             // numericUpDown2
             // 
-            numericUpDown2.Location = new Point(134, 133);
+            numericUpDown2.Location = new Point(136, 126);
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(45, 27);
             numericUpDown2.TabIndex = 10;
@@ -224,17 +249,17 @@
             label6.TabIndex = 8;
             label6.Text = "Descripcion:";
             // 
-            // dataGridView2
+            // tablaTarea
             // 
-            dataGridView2.BackgroundColor = Color.Gray;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.GridColor = Color.White;
-            dataGridView2.Location = new Point(33, 218);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(943, 237);
-            dataGridView2.TabIndex = 7;
+            tablaTarea.BackgroundColor = Color.Gray;
+            tablaTarea.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tablaTarea.GridColor = Color.White;
+            tablaTarea.Location = new Point(33, 218);
+            tablaTarea.Name = "tablaTarea";
+            tablaTarea.RowHeadersWidth = 51;
+            tablaTarea.RowTemplate.Height = 29;
+            tablaTarea.Size = new Size(943, 237);
+            tablaTarea.TabIndex = 7;
             // 
             // label5
             // 
@@ -261,7 +286,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tablaTarea).EndInit();
             ResumeLayout(false);
         }
 
@@ -276,13 +301,15 @@
         private NumericUpDown numericUpDown1;
         private Label label4;
         private Panel panel2;
-        private DataGridView dataGridView2;
+        private DataGridView tablaTarea;
         private Label label5;
         private Label label7;
         private Label label6;
         private Button ButtonIngresarTar;
-        private TextBox textBox3;
+        private TextBox textBoxDescriptionTarea;
         private NumericUpDown numericUpDown2;
+        private ComboBox comboBoxArea;
+        private Label label8;
     }
 }
 #endregion

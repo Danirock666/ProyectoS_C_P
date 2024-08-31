@@ -32,6 +32,14 @@ namespace ProyectoS_C_P.http
     {
     }
 
+    public class RespuestaTarea : RespuestaBase<Tarea>
+    {
+    }
+
+    public class RespuestaListaDeTareas : RespuestaBase<List<Tarea>>
+    {
+    }
+
     public class RespuestaCreacionProyecto : RespuestaBase<Proyecto>
     {
     }
