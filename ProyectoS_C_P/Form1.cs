@@ -1,6 +1,7 @@
 using ProyectoS_C_P.modelos;
 using ProyectoS_C_P.services;
 using ProyectoS_C_P.servicios;
+using System.Runtime.InteropServices.ObjectiveC;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,22 +18,31 @@ namespace ProyectoS_C_P
 
         List<Usuario> usuarios = new List<Usuario>();
         Usuario usuario = new Usuario();
-        
+
         TareaServicio tareaService = new TareaServicio();
         List<Tarea> tareas = new List<Tarea>();
         Tarea tarea = new Tarea();
-
+        
+        DataGridViewComboBoxColumn comboBoxColumnPro;
         public Form1()
         {
             InitializeComponent();
             InicializarDataGridView();
             tablaProyecto.CellValueChanged += tablaProyecto_CellClick;
+            tablaTarea.CellValueChanged += tablaTarea_CellClick;
+            tablaProyecto.DataError += tablaProyecto_DataError;
             tablaProyecto.CurrentCellDirtyStateChanged += (s, e) =>
             {
-                // Asegúrate de que el valor cambie cuando el estado cambie en la columna del ComboBox
                 if (tablaProyecto.CurrentCell is DataGridViewComboBoxCell)
                 {
                     tablaProyecto.CommitEdit(DataGridViewDataErrorContexts.Commit);
+                }
+            };
+            tablaTarea.CurrentCellDirtyStateChanged += (s, e) =>
+            {
+                if (tablaTarea.CurrentCell is DataGridViewComboBoxCell)
+                {
+                    tablaTarea.CommitEdit(DataGridViewDataErrorContexts.Commit);
                 }
             };
         }
@@ -62,6 +72,7 @@ namespace ProyectoS_C_P
 
                 MessageBox.Show(proyectoCreado);
             });
+
             Task.Run(async () =>
             {
                 tareas = await tareaService.Index();
@@ -116,10 +127,10 @@ namespace ProyectoS_C_P
             tareas.Add(objetoTarea);
             ActualizarDataGridView();
         }
-        // Aquí se inicia el DataGridView (tablaProyecto)
+
         private void InicializarDataGridView()
         {
-            //aqui empieza la iniciacion del DataGridView de Proyectos
+            // Inicialización del DataGridView de Proyectos
             tablaProyecto.Columns.Add("Id", "Id");
             tablaProyecto.Columns.Add("Name", "Name");
             tablaProyecto.Columns.Add("Description", "Description");
@@ -135,33 +146,39 @@ namespace ProyectoS_C_P
             tablaProyecto.Columns.Add("TotalHours", "Total Hours");
             tablaProyecto.Columns.Add("CreatedAT", "Created AT");
 
-            // Crear y agregar la columna de botón de editar en Proyecto
-            DataGridViewButtonColumn EditarColumnaPro = new DataGridViewButtonColumn();
-            EditarColumnaPro.Name = "Editar";
-            EditarColumnaPro.HeaderText = "Editar";
-            EditarColumnaPro.Text = "Editar";
-            EditarColumnaPro.UseColumnTextForButtonValue = true;
+            // Columna de botón de editar en Proyecto
+            DataGridViewButtonColumn EditarColumnaPro = new DataGridViewButtonColumn
+            {
+                Name = "Editar",
+                HeaderText = "Editar",
+                Text = "Editar",
+                UseColumnTextForButtonValue = true
+            };
             tablaProyecto.Columns.Add(EditarColumnaPro);
 
-            // añadir columnas de botones eliminar en Proyecto
-            DataGridViewButtonColumn EliminarColumnaPro = new DataGridViewButtonColumn();
-            EliminarColumnaPro.Name = "Eliminar";
-            EliminarColumnaPro.HeaderText = "Eliminar";
-            EliminarColumnaPro.Text = "Eliminar";
-            EliminarColumnaPro.UseColumnTextForButtonValue = true;
+            // Columna de botón de eliminar en Proyecto
+            DataGridViewButtonColumn EliminarColumnaPro = new DataGridViewButtonColumn
+            {
+                Name = "Eliminar",
+                HeaderText = "Eliminar",
+                Text = "Eliminar",
+                UseColumnTextForButtonValue = true
+            };
             tablaProyecto.Columns.Add(EliminarColumnaPro);
 
-            // boton actualizar en Proyecto
-            DataGridViewButtonColumn ActualizarColumnaPro = new DataGridViewButtonColumn();
-            ActualizarColumnaPro.Name = "Actualizar";
-            ActualizarColumnaPro.HeaderText = "Actualizar";
-            ActualizarColumnaPro.Text = "Actualizar";
-            ActualizarColumnaPro.UseColumnTextForButtonValue = true;
+            // Columna de botón de actualizar en Proyecto
+            DataGridViewButtonColumn ActualizarColumnaPro = new DataGridViewButtonColumn
+            {
+                Name = "Actualizar",
+                HeaderText = "Actualizar",
+                Text = "Actualizar",
+                UseColumnTextForButtonValue = true
+            };
             tablaProyecto.Columns.Add(ActualizarColumnaPro);
 
             tablaProyecto.CellClick += tablaProyecto_CellClick;
 
-            // aqui inicia el datagridview de tareas
+            // Inicialización del DataGridView de Tareas
             tablaTarea.Columns.Add("Id", "Id");
             tablaTarea.Columns.Add("Description", "Description");
             tablaTarea.Columns.Add("StarDate", "Star Date");
@@ -179,33 +196,39 @@ namespace ProyectoS_C_P
             tablaTarea.Columns.Add("ProyectId", "Proyect Id");
             tablaTarea.Columns.Add("UserId", "User Id");
 
-            // Crear y agregar la columna de botón de editar en Tareas
-            DataGridViewButtonColumn EditarColumnaTar = new DataGridViewButtonColumn();
-            EditarColumnaTar.Name = "Editar";
-            EditarColumnaTar.HeaderText = "Editar";
-            EditarColumnaTar.Text = "Editar";
-            EditarColumnaTar.UseColumnTextForButtonValue = true;
+            // Columna de botón de editar en Tareas
+            DataGridViewButtonColumn EditarColumnaTar = new DataGridViewButtonColumn
+            {
+                Name = "Editar",
+                HeaderText = "Editar",
+                Text = "Editar",
+                UseColumnTextForButtonValue = true
+            };
             tablaTarea.Columns.Add(EditarColumnaTar);
 
-            // añadir columnas de botones eliminar en Tareas
-            DataGridViewButtonColumn EliminarColumnaTar = new DataGridViewButtonColumn();
-            EliminarColumnaTar.Name = "Eliminar";
-            EliminarColumnaTar.HeaderText = "Eliminar";
-            EliminarColumnaTar.Text = "Eliminar";
-            EliminarColumnaTar.UseColumnTextForButtonValue = true;
+            // Columna de botón de eliminar en Tareas
+            DataGridViewButtonColumn EliminarColumnaTar = new DataGridViewButtonColumn
+            {
+                Name = "Eliminar",
+                HeaderText = "Eliminar",
+                Text = "Eliminar",
+                UseColumnTextForButtonValue = true
+            };
             tablaTarea.Columns.Add(EliminarColumnaTar);
 
-            // boton actualizar en Tareas
-            DataGridViewButtonColumn ActualizarColumnaTar = new DataGridViewButtonColumn();
-            ActualizarColumnaTar.Name = "Actualizar";
-            ActualizarColumnaTar.HeaderText = "Actualizar";
-            ActualizarColumnaTar.Text = "Actualizar";
-            ActualizarColumnaTar.UseColumnTextForButtonValue = true;
+            // Columna de botón de actualizar en Tareas
+            DataGridViewButtonColumn ActualizarColumnaTar = new DataGridViewButtonColumn
+            {
+                Name = "Actualizar",
+                HeaderText = "Actualizar",
+                Text = "Actualizar",
+                UseColumnTextForButtonValue = true
+            };
             tablaTarea.Columns.Add(ActualizarColumnaTar);
 
             tablaTarea.CellClick += tablaTarea_CellClick;
-
         }
+
         private void tablaProyecto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -245,14 +268,14 @@ namespace ProyectoS_C_P
                 }
             }
         }
-        //tabla del datagridview configuraciones de botones 
+
         private void tablaTarea_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 if (tablaTarea.Columns[e.ColumnIndex].Name == "Eliminar")
                 {
-                    var confirmResult = MessageBox.Show("¿Está seguro que desea eliminar el proyecto?",
+                    var confirmResult = MessageBox.Show("¿Está seguro que desea eliminar la tarea?",
                                                          "Confirmar Eliminación",
                                                          MessageBoxButtons.YesNo);
                     if (confirmResult == DialogResult.Yes)
@@ -267,6 +290,7 @@ namespace ProyectoS_C_P
 
                     textBoxDescriptionTarea.Text = tarea.Description;
                     numericUpDown2.Value = tarea.Hours;
+                    comboBoxArea.Text = tarea.Area;
 
                     tareas.RemoveAt(e.RowIndex);
                     ActualizarDataGridView();
@@ -277,61 +301,62 @@ namespace ProyectoS_C_P
 
                     tarea.Description = textBoxDescriptionTarea.Text;
                     tarea.Hours = (int)numericUpDown2.Value;
+                    tarea.Area = comboBoxArea.Text;
                     // Actualizar cualquier otro campo relevante aquí...
 
                     ActualizarDataGridView();
                 }
             }
         }
+
         private void ActualizarDataGridView()
-            {
-                tablaProyecto.Rows.Clear();
-                tablaTarea.Rows.Clear();
+        {
+            tablaProyecto.Rows.Clear();
+            tablaTarea.Rows.Clear();
 
             foreach (var proyecto in proyectos)
             {
-                tablaProyecto.Rows.Add(
-                    proyecto.Id,
-                    proyecto.Name,
-                    proyecto.Description,
-                    proyecto.Status,
-                    proyecto.TotalHours,
-                    proyecto.CreatedAt.ToShortDateString());
-            }
-                foreach (var tarea in tareas)
-                {
-                    tablaTarea.Rows.Add(
-                        tarea.Id,
-                        tarea.Description,
-                        tarea.StartDate.ToShortDateString(),
-                        tarea.Status,
-                        tarea.Hours,
-                        tarea.Area,
-                        tarea.ProyectId,
-                        tarea.UserId);
-                }
+                // Asegúrate de que el estado es válido antes de añadirlo al DataGridViewA
+                var status = (proyecto.Status == "Pendiente" || proyecto.Status == "En Progreso" || proyecto.Status == "Completado")
+              ? proyecto.Status
+              : "Pendiente";
+
+
+                tablaProyecto.Rows.Add(proyecto.Id, proyecto.Name, proyecto.Description, status, proyecto.TotalHours, proyecto.CreatedAt.ToShortDateString());
             }
 
-            private void tablaProyecto_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+            foreach (var tarea in tareas)
             {
-                if (e.ColumnIndex == tablaProyecto.Columns["comboBoxStatusColumn"].Index && e.RowIndex >= 0)
-                {
-                    Proyecto proyecto = proyectos[e.RowIndex];
-                    proyecto.Status = tablaProyecto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                    ActualizarDataGridView();
-                }
+                tablaTarea.Rows.Add(tarea.Id, tarea.Description, tarea.StartDate.ToShortDateString(), tarea.Status, tarea.Hours, tarea.Area, tarea.ProyectId, tarea.UserId);
             }
+        }
 
-            private void tablaTarea_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void tablaProyecto_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.Exception is ArgumentException && tablaProyecto.Columns[e.ColumnIndex] is DataGridViewComboBoxColumn)
             {
-            if (e.ColumnIndex == tablaTarea.Columns["comboBoxStatusColumn"].Index && e.RowIndex >= 0)
+                MessageBox.Show($"El valor de la celda no es válido. Se usará 'Pendiente' como valor predeterminado.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tablaProyecto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Pendiente"; // Valor predeterminado
+            }
+            else
             {
-                Tarea tarea = tareas[e.RowIndex];
-                tarea.Status = tablaTarea.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                ActualizarDataGridView();
-         }
-       }
-     }
-  }
+                MessageBox.Show($"Error al procesar los datos: {e.Exception.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            e.ThrowException = false;
+        }
 
-
+        private void tablaTarea_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.Exception is ArgumentException && tablaTarea.Columns[e.ColumnIndex] is DataGridViewComboBoxColumn)
+            {
+                MessageBox.Show($"El valor de la celda no es válido. Se usará 'Pendiente' como valor predeterminado.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tablaTarea.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Pendiente"; // Valor predeterminado
+            }
+            else
+            {
+                MessageBox.Show($"Error al procesar los datos: {e.Exception.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            e.ThrowException = false;
+        }
+    }
+}

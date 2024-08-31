@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
             numericUpDown1 = new NumericUpDown();
             label4 = new Label();
@@ -70,7 +71,7 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1008, 501);
+            panel1.Size = new Size(1008, 486);
             panel1.TabIndex = 0;
             // 
             // numericUpDown1
@@ -100,7 +101,7 @@
             tablaProyecto.Name = "tablaProyecto";
             tablaProyecto.RowHeadersWidth = 51;
             tablaProyecto.RowTemplate.Height = 29;
-            tablaProyecto.Size = new Size(943, 237);
+            tablaProyecto.Size = new Size(943, 245);
             tablaProyecto.TabIndex = 6;
             // 
             // textBoxNombre
@@ -175,9 +176,9 @@
             panel2.Controls.Add(label6);
             panel2.Controls.Add(tablaTarea);
             panel2.Controls.Add(label5);
-            panel2.Location = new Point(12, 542);
+            panel2.Location = new Point(12, 521);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1008, 486);
+            panel2.Size = new Size(1008, 491);
             panel2.TabIndex = 1;
             // 
             // label8
@@ -258,7 +259,7 @@
             tablaTarea.Name = "tablaTarea";
             tablaTarea.RowHeadersWidth = 51;
             tablaTarea.RowTemplate.Height = 29;
-            tablaTarea.Size = new Size(943, 237);
+            tablaTarea.Size = new Size(943, 251);
             tablaTarea.TabIndex = 7;
             // 
             // label5
@@ -275,9 +276,10 @@
             // Form1
             // 
             BackColor = Color.Black;
-            ClientSize = new Size(1042, 1055);
+            ClientSize = new Size(1057, 1055);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
