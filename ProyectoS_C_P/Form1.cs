@@ -193,7 +193,7 @@ namespace ProyectoS_C_P
             EliminarColumnaTar.HeaderText = "Eliminar";
             EliminarColumnaTar.Text = "Eliminar";
             EliminarColumnaTar.UseColumnTextForButtonValue = true;
-            tablaProyecto.Columns.Add(EliminarColumnaTar);
+            tablaTarea.Columns.Add(EliminarColumnaTar);
 
             // boton actualizar en Tareas
             DataGridViewButtonColumn ActualizarColumnaTar = new DataGridViewButtonColumn();
@@ -201,7 +201,7 @@ namespace ProyectoS_C_P
             ActualizarColumnaTar.HeaderText = "Actualizar";
             ActualizarColumnaTar.Text = "Actualizar";
             ActualizarColumnaTar.UseColumnTextForButtonValue = true;
-            tablaProyecto.Columns.Add(ActualizarColumnaTar);
+            tablaTarea.Columns.Add(ActualizarColumnaTar);
 
             tablaTarea.CellClick += tablaTarea_CellClick;
 
